@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productivity on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/tags/productivity/</link>
+    <description>Recent content in productivity on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 shortcut keys that help you code faster🏃‍♀️💨</title>
+      <link>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</guid>
+      <description>What I think I look like when I am using them:
+Please note that I am using a Windows keyboard. Other than that, the following shortcuts are not specific to any IDE or editor.
+🏃‍♀️💨 Move the cursor one word at a time  Ctrl + arrow keys to move your cursor one word at a time. Hold down the Shift key to highlight.  Useful for:
+ deleting or cutting the whole word (highlight and backspace/Ctrl+X).</description>
+    </item>
+    
+  </channel>
+</rss>

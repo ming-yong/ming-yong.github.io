@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>React and  Redux | (ง •̀_•́)ง Ming&#39;s blog</title>
+<meta name="title" content="React and  Redux" />
+<meta name="description" content="Learning notes about React and  Redux." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="React and  Redux" />
+<meta property="og:description" content="Learning notes about React and  Redux." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/notebook/react-and-redux/" /><meta property="article:section" content="notebook" />
+<meta property="article:published_time" content="2019-12-12T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-12T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React and  Redux"/>
+<meta name="twitter:description" content="Learning notes about React and  Redux."/>
+
+
+
+<meta itemprop="name" content="React and  Redux">
+<meta itemprop="description" content="Learning notes about React and  Redux."><meta itemprop="datePublished" content="2019-12-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="720">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: initial;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+</style>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J0GL63757"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6J0GL63757');
+</script></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming&#39;s blog</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/notebook/">Notebook</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/">freeCodeCamp &ldquo;Front End Libraries Certification&rdquo;</a></li>
+</ul>
+<h2 id="everything-in-one">Everything in one</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Redux:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addMessage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">message</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ADD</span>,
+    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">message</span>
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">messageReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ADD</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> [
+        ...<span style="color:#a6e22e">state</span>,
+        <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">message</span>
+      ];
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">messageReducer</span>);
+
+<span style="color:#75715e">// React:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Provider</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactRedux</span>.<span style="color:#a6e22e">Provider</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">connect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactRedux</span>.<span style="color:#a6e22e">connect</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Presentational</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+    }
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+  }
+  <span style="color:#a6e22e">handleChange</span>(<span style="color:#a6e22e">event</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>
+    });
+  }
+  <span style="color:#a6e22e">submitMessage</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+    });
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">submitNewMessage</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>);
+  }
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Type</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Message</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span>
+          <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>}
+          <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>}<span style="color:#f92672">/&gt;&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">messages</span>.<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">idx</span>) =&gt; {
+              <span style="color:#66d9ef">return</span> (
+                 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">idx</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">message</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+              )
+            })
+          }
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    );
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mapStateToProps</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>}
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mapDispatchToProps</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dispatch</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">submitNewMessage</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">message</span>) =&gt; {
+      <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addMessage</span>(<span style="color:#a6e22e">message</span>))
+    }
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Container</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">mapStateToProps</span>, <span style="color:#a6e22e">mapDispatchToProps</span>)(<span style="color:#a6e22e">Presentational</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppWrapper</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Provider</span> <span style="color:#a6e22e">store</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">store</span>}<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Container</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Provider&gt;</span>
+    );
+  }
+};
+</code></pre></div><h2 id="react-and-redux">React and Redux</h2>
+<p>React is a view library that you provide with data, then it renders the view in an efficient, predictable way. Redux is a state management framework that you can use to simplify the management of your application&rsquo;s state.</p>
+<h3 id="manage-state-locally-first">Manage state locally first</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisplayMessages</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+      <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> []
+    }
+  }
+
+  <span style="color:#a6e22e">handleChange</span>(<span style="color:#a6e22e">event</span>){
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>,
+      <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">messages</span>
+    })
+  }
+
+  <span style="color:#a6e22e">submitMessage</span>(){
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;&#34;</span>,
+      <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span>[...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">messages</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>]
+    })
+  }
+
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Type</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Message</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>)} <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>}<span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>)}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">messages</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>)=&gt;{
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">index</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">item</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+          })}
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    );
+  }
+};
+</code></pre></div><h3 id="extract-state-logic-to-redux">Extract State logic to Redux</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//action type
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ADD&#34;</span>;
+
+<span style="color:#75715e">//action creator
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addMessage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>=&gt;{
+    <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#a6e22e">ADD</span>,
+        <span style="color:#a6e22e">message</span>
+    }
+}
+
+<span style="color:#75715e">//reducer
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">messageReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span><span style="color:#f92672">=</span>[],<span style="color:#a6e22e">action</span>)=&gt;{
+    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>){
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ADD</span><span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">state</span>,<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">message</span>];
+        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+    }
+}
+
+<span style="color:#75715e">//create store, dispatching addMessage against the store, immutably add a new message to the array of messages held in state.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">messageReducer</span>);
+</code></pre></div><h3 id="combining-both-and-provider">Combining both and provider</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Redux Code:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addMessage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">message</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ADD</span>,
+    <span style="color:#a6e22e">message</span>
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">messageReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ADD</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> [
+        ...<span style="color:#a6e22e">state</span>,
+        <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">message</span>
+      ];
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+
+
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">messageReducer</span>);
+
+<span style="color:#75715e">// React Code:
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisplayMessages</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+      <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> []
+    }
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+  }
+  <span style="color:#a6e22e">handleChange</span>(<span style="color:#a6e22e">event</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>
+    });
+  }
+  <span style="color:#a6e22e">submitMessage</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">currentMessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+      <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">messages</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">currentMessage</span>)
+    });
+  }
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Type</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Message</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span>
+          <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>}
+          <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>}<span style="color:#f92672">/&gt;&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitMessage</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">messages</span>.<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">idx</span>) =&gt; {
+              <span style="color:#66d9ef">return</span> (
+                 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">idx</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">message</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+              )
+            })
+          }
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    );
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Provider</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactRedux</span>.<span style="color:#a6e22e">Provider</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppWrapper</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#75715e">// render the Provider here
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">render</span>(){
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Provider</span> <span style="color:#a6e22e">store</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">store</span>}<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">DisplayMessages</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Provider&gt;</span>
+    );
+  }
+};
+
+<span style="color:#75715e">//Provider is a wrapper component from React Redux that wraps your React app.it then allows you to access the Redux store and dispatch functions throughout your component tree.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//takes 2 props: the Redux store and the child components of your app
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Provider</span> <span style="color:#a6e22e">store</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">store</span>}<span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">App</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Provider&gt;</span>
+
+<span style="color:#75715e">//The Provider component allows you to provide state and dispatch to your React components, but you must specify exactly what state and actions you want. This way, you make sure that each component only has access to the state it needs. You accomplish this by creating two functions: mapStateToProps() and mapDispatchToProps().
+</span></code></pre></div><h3 id="connect-react-and-redux-provider-and-connect">Connect React and Redux: Provider and Connect</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addMessage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">message</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ADD&#39;</span>,
+    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">message</span>
+  }
+};
+
+<span style="color:#75715e">//map state and props
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mapStateToProps</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>
+  }
+};
+
+<span style="color:#75715e">//map dispatch to props
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mapDispatchToProps</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dispatch</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">submitNewMessage</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">message</span>) =&gt; {
+      <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addMessage</span>(<span style="color:#a6e22e">message</span>));
+    }
+  }
+};
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Presentational</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  }
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h3</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">Presentational</span> <span style="color:#a6e22e">Component</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h3&gt;</span>
+  }
+};
+
+<span style="color:#75715e">// Behind the scenes, React Redux is using Redux&#39;s store.dispatch() to conduct these dispatches with mapDispatchToProps(). This is similar to how it uses store.subscribe() for components that are mapped to state.
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">connect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactRedux</span>.<span style="color:#a6e22e">connect</span>;
+<span style="color:#75715e">//both maps are optional, pass null if want to omit
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ConnectedComponent</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">mapStateToProps</span>,<span style="color:#a6e22e">mapDispatchToProps</span>)(<span style="color:#a6e22e">Presentational</span>);
+</code></pre></div>
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

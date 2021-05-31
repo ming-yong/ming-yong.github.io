@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>codeNewbie on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/tags/codenewbie/</link>
+    <description>Recent content in codeNewbie on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/codenewbie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A visit to the Tutorial Hell</title>
+      <link>https://mingyong.dev/blog/a-visit-to-the-tutorial-hell/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/a-visit-to-the-tutorial-hell/</guid>
+      <description>Like all others who try to teach themselves how to code, I once visited the famous Tutorial Hell.
+It all started when I landed in the project section of freeCodeCamp&amp;rsquo;s Responsive Web Design Certification. I have completed all lessons before it, so I guess, technically, I should (at least) know how to start the project.
+No, I don&amp;rsquo;t. Well, if not, I can always watch a tutorial on YouTube.
+One after another, watching tutorials started feeling like talking to my dad: I keep getting an already told story/concept.</description>
+    </item>
+    
+  </channel>
+</rss>

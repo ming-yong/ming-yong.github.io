@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yearInReview on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/tags/yearinreview/</link>
+    <description>Recent content in yearInReview on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/yearinreview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Years in review: 2018ish to July 2020</title>
+      <link>https://mingyong.dev/blog/review-july-2020/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/review-july-2020/</guid>
+      <description>I started learning code and English in 2018 (maybe late 2017ish) to attend community college in Canada in September 2018. My learning journey so far can be divided into two phases: the &amp;ldquo;English and Code gives me headaches&amp;rdquo; phase (phase 1) and the &amp;ldquo;oh I am so lost&amp;rdquo; phase (phase 2). This post is about what I did during those phases and what I think I can improve.
+Phase 1: Learn the basics If my memory serves me right, my first attempt at the first freeCodeCamp project was around January 2018.</description>
+    </item>
+    
+  </channel>
+</rss>

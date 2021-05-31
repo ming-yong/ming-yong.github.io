@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hosting on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/tags/hosting/</link>
+    <description>Recent content in hosting on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to set up Namecheap domain and subdomain on GitHub Pages</title>
+      <link>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</guid>
+      <description>Setting up a custom domain According to the &amp;ldquo;configuring an apex domain&amp;rdquo; GitHub document and &amp;ldquo;Connect GitHub Pages to Your Namecheap Domain&amp;rdquo; by Paul J. Williams, there are two steps to use your custom domain for &amp;lt;username&amp;gt;.github.io:
+ add 4 A records and a CNAME record on Namecheap (&amp;ldquo;Domain List&amp;rdquo; &amp;gt; &amp;ldquo;Advanced DNS&amp;rdquo; &amp;gt; Add those records under &amp;ldquo;Host Records&amp;rdquo;) add a CNAME file to your GitHub repository (you can add a file or do it through &amp;ldquo;Settings&amp;rdquo; &amp;gt; &amp;ldquo;Options&amp;rdquo; &amp;gt; Add a &amp;ldquo;Custom domain&amp;rdquo; under &amp;ldquo;GitHub Pages&amp;rdquo;)  You don&amp;rsquo;t have to purchase the SSL certificate from Namecheap or manually install one.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>React Tic Tac Toe | (ง •̀_•́)ง Ming&#39;s blog</title>
+<meta name="title" content="React Tic Tac Toe" />
+<meta name="description" content="I built a tic-tac-toe to learn React." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="React Tic Tac Toe" />
+<meta property="og:description" content="I built a tic-tac-toe to learn React." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/notebook/react-tic-tac-toe/" /><meta property="article:section" content="notebook" />
+<meta property="article:published_time" content="2019-11-02T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-11-02T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React Tic Tac Toe"/>
+<meta name="twitter:description" content="I built a tic-tac-toe to learn React."/>
+
+
+
+<meta itemprop="name" content="React Tic Tac Toe">
+<meta itemprop="description" content="I built a tic-tac-toe to learn React."><meta itemprop="datePublished" content="2019-11-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-11-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="791">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: initial;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+</style>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J0GL63757"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6J0GL63757');
+</script></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming&#39;s blog</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/notebook/">Notebook</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <p>I will try to explain code of <a href="https://reactjs.org/tutorial/tutorial.html">React official tutorial: Tic Tac Toe</a> in the order of:</p>
+<ul>
+<li><a href="#game-class-component">Game class component</a></li>
+<li><a href="#calculate-winner-function">calculate winner function</a></li>
+<li><a href="#board-class-component">Board class component</a></li>
+<li><a href="#square-function-component">Square function component</a></li>
+</ul>
+<p>Here&rsquo;s my project <a href="https://ming-yong.github.io/react-tic-tac-toe/">demo here</a> and <a href="https://github.com/ming-yong/react-tic-tac-toe">source code</a> if you&rsquo;re interested.</p>
+<h2 id="the-final-result">The final result</h2>
+<p><img src="/images/2019/react/react_ticTacToe.gif" alt="demonstration of react tic tac toe"></p>
+<p>A tic tac toe browser game with feature of going back to any previous move.</p>
+<h2 id="the-code">The code</h2>
+<p><img src="/images/2019/react/react_ticTacToe_Summary.PNG" alt="summary of react tic tac toe code"></p>
+<p>We have 2 class components(<code>Board</code> and <code>Game</code>), 1 function components(<code>Square</code>), and a function(<code>calculateWinner</code>).</p>
+<h3 id="game-class-component">Game class component</h3>
+<p>We want <code>Game</code> to remember three things:</p>
+<ul>
+<li><code>stepNumber</code> as which step we are currently at.</li>
+<li><code>xIsNext</code> as whose turn it is.</li>
+<li><code>history</code> as how the board looks like when each step happened.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-dom&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Game</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>){
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span><span style="color:#f92672">=</span>{
+      <span style="color:#a6e22e">history</span><span style="color:#f92672">:</span>[{
+        <span style="color:#a6e22e">squares</span><span style="color:#f92672">:</span>Array(<span style="color:#ae81ff">9</span>).<span style="color:#a6e22e">fill</span>(<span style="color:#66d9ef">null</span>),
+      }],
+      <span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,
+      <span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,
+    };
+  }
+}
+
+<span style="color:#75715e">// ========================================
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Game</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>));
+</code></pre></div><p>As seen above, <code>history</code> looks something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[
+  {
+    <span style="color:#a6e22e">squares</span><span style="color:#f92672">:</span>[
+              <span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,
+              <span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,
+              <span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,
+            ]
+  }
+]
+</code></pre></div><p>We will call the items in <code>squares</code>, the 9 values, as <strong>&ldquo;squares layout&rdquo;</strong> in the following content.</p>
+<p>Now, let&rsquo;s look at what <code>Game</code> renders.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-dom&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Game</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>){...}
+  
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">history</span><span style="color:#f92672">=</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">history</span>;<span style="color:#75715e">//the updated &#34;history&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">stepNumber</span>];<span style="color:#75715e">//the latest &#34;squares layout&#34; in &#34;history&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">winner</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">calculateWinner</span>(<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>);<span style="color:#75715e">//check if there is a winner
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">step</span>,<span style="color:#a6e22e">move</span>)=&gt;{<span style="color:#75715e">//create &#34;jumping to previous move&#34; buttons from each &#34;squares&#34; in &#34;history&#34;
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">desc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">move</span><span style="color:#f92672">?</span>
+      <span style="color:#e6db74">&#34;Go to move # &#34;</span><span style="color:#f92672">+</span> <span style="color:#a6e22e">move</span><span style="color:#f92672">:</span>
+      <span style="color:#e6db74">&#34;Go to game start&#34;</span>;
+      <span style="color:#66d9ef">return</span>(
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">move</span>}<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{()=&gt;<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">jumpTo</span>(<span style="color:#a6e22e">move</span>)}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">desc</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+      );
+    });
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">status</span>;
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">winner</span>){
+      <span style="color:#a6e22e">status</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Winner: &#34;</span><span style="color:#f92672">+</span> <span style="color:#a6e22e">winner</span>;
+    }<span style="color:#66d9ef">else</span>{
+      <span style="color:#a6e22e">status</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Next player: &#34;</span><span style="color:#f92672">+</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">?</span><span style="color:#e6db74">&#34;X&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;O&#34;</span>);
+    }
+
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game-board&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Board</span>
+            <span style="color:#a6e22e">squares</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>}
+            <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">i</span>)=&gt;<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">i</span>)}<span style="color:#75715e">//&#34;i&#34; is the index of the square(one of the 9 values) in &#34;squares&#34;
+</span><span style="color:#75715e"></span>          <span style="color:#960050;background-color:#1e0010">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game-info&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">status</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ol</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">move</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ol&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    );
+  }
+}
+
+<span style="color:#75715e">// ========================================
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Game</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>));
+</code></pre></div><p>We can see that <code>Game</code> returns a <code>game</code> div with two divs(<code>game-board</code> and <code>game-info</code>) nested inside, since we are at the beginning of a game, the <code>current.squares</code>, which is the latest &ldquo;squares layout&rdquo; in <code>history</code>, is an array with 9 <code>null</code> values, thus we have a board with empty squares.</p>
+<p><img src="/images/2019/react/react_ticTacToe_Game.PNG" alt="summary of react tic tac toe Game component code"></p>
+<p>We need a <code>handleClick</code>(when user clicks the square) and a <code>jumpTo</code>(when user clicks the button to go back to previous move) method in our <code>Game</code> as well.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Game</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>){...}
+
+  <span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">i</span>){
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">history</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);<span style="color:#75715e">//get a copy of the &#34;history&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>[<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];<span style="color:#75715e">//set the last &#34;squares layout&#34; in &#34;history&#34; as the current
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">squares</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>.<span style="color:#a6e22e">slice</span>();<span style="color:#75715e">//get a copy of the &#34;squares layout&#34; in &#34;current&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">calculateWinner</span>(<span style="color:#a6e22e">squares</span>)<span style="color:#f92672">||</span><span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">i</span>]){
+      <span style="color:#75715e">//disable adding O or X if there is a winner or if the square is occupied
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">=</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">?</span><span style="color:#e6db74">&#34;X&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;O&#34;</span>;<span style="color:#75715e">//put X or O in the square based on the flag
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//update the state
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">history</span><span style="color:#f92672">:</span><span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">concat</span>([{<span style="color:#75715e">//pushing the current &#34;squares layout&#34; to the &#34;history&#34;
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">squares</span><span style="color:#f92672">:</span><span style="color:#a6e22e">squares</span>,
+      }]),
+      <span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">:</span><span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">length</span>,<span style="color:#75715e">//update the step number
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">:!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">xIsNext</span>,<span style="color:#75715e">//flip the flag
+</span><span style="color:#75715e"></span>      });
+  }
+
+  <span style="color:#a6e22e">jumpTo</span>(<span style="color:#a6e22e">step</span>){
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">:</span><span style="color:#a6e22e">step</span>,<span style="color:#75715e">//reverse to the corresponding step
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">:</span>(<span style="color:#a6e22e">step</span><span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">===</span><span style="color:#ae81ff">0</span>,<span style="color:#75715e">//flip the flag
+</span><span style="color:#75715e"></span>    });
+  }
+
+  <span style="color:#a6e22e">render</span>() {...}
+</code></pre></div><p>This is what it looks like if we console out <code>history</code>:</p>
+<p>In code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">i</span>){
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">history</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">history</span>);
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>[<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+  <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>In browser:</p>
+<p><img src="/images/2019/react/react_ticTacToe_historyConsole.gif" alt="what it&rsquo;s like if we console.log history"></p>
+<h3 id="calculate-winner-function">calculate winner function</h3>
+<p>And to determine a winner, we added a function <code>calculateWinner</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculateWinner</span>(<span style="color:#a6e22e">squares</span>) {
+  <span style="color:#75715e">//every possibility of winning a game
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lines</span> <span style="color:#f92672">=</span> [
+    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>],
+    [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>],
+    [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>],
+    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>],
+    [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>],
+    [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>],
+    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>],
+    [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>],
+  ];
+
+  <span style="color:#75715e">//check if the &#34;squares layout&#34; matches any pattern.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">lines</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">lines</span>[<span style="color:#a6e22e">i</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">b</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">c</span>]) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>];
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+}
+</code></pre></div><h3 id="board-class-component">Board class component</h3>
+<p>In the <code>Game</code> class component, we saw that a component <code>Board</code> is being rendered.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game-board&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Board</span>
+    <span style="color:#a6e22e">squares</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>}<span style="color:#75715e">//an array with 9 values, it&#39;s the last item in history
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">i</span>)=&gt;<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">i</span>)}<span style="color:#75715e">//handleClick method
+</span><span style="color:#75715e"></span>  <span style="color:#960050;background-color:#1e0010">/&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></div><p>The <code>handleClick</code> and <code>current.squares</code> are being passed into <code>Board</code> as props.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  
+  <span style="color:#a6e22e">renderSquare</span>(<span style="color:#a6e22e">i</span>) {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Square</span>
+      <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">i</span>]}
+      <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{()=&gt;<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onClick</span>(<span style="color:#a6e22e">i</span>)}
+      <span style="color:#f92672">/&gt;</span>
+    );
+  }
+
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;board-row&#34;</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">0</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">1</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">2</span>)}
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;board-row&#34;</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">3</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">4</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">5</span>)}
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;board-row&#34;</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">6</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">7</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">8</span>)}
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    );
+  }
+}
+</code></pre></div><p>In <code>Board</code>, we render three rows(<code>board-row</code>) with three squares in each. In the <code>renderSquare</code> method, <code>this.props.squares[i]</code> is a square(at index <code>i</code>) of the &ldquo;squares layout&rdquo;(<code>squares</code> is <code>current.squares</code> from <code>Game</code>) and <code>onClick</code> is a function(<code>handleClick</code> from <code>Game</code>). Both of there are passed into <code>Square</code> component as props.</p>
+<h3 id="square-function-component">Square function component</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Square</span>(<span style="color:#a6e22e">props</span>){
+  <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span>
+    <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;square&#34;</span>
+    <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onClick</span>}
+    <span style="color:#f92672">&gt;</span>
+      {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">value</span>}
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;);</span>
+}
+</code></pre></div><p>Finally in the <code>Square</code> component, we render a button with a class of <code>&quot;square&quot;</code>, click event triggering the <code>onClick</code>(<code>onClick</code> in <code>Board</code>, <code>handleClick</code> in <code>Game</code>) function, displaying the <code>value</code>(a square of the &ldquo;squares layout&rdquo;).</p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

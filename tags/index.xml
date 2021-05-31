@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/tags/</link>
+    <description>Recent content in Tags on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hosting</title>
+      <link>https://mingyong.dev/tags/hosting/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codeNewbie</title>
+      <link>https://mingyong.dev/tags/codenewbie/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/codenewbie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://mingyong.dev/tags/git/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>productivity</title>
+      <link>https://mingyong.dev/tags/productivity/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yearInReview</title>
+      <link>https://mingyong.dev/tags/yearinreview/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/yearinreview/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

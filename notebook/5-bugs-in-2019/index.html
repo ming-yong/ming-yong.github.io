@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>5 bugs in 2019 | (ง •̀_•́)ง Ming&#39;s blog</title>
+<meta name="title" content="5 bugs in 2019" />
+<meta name="description" content="Troubleshooting I&#39;ve done in 2019." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="5 bugs in 2019" />
+<meta property="og:description" content="Troubleshooting I&#39;ve done in 2019." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/notebook/5-bugs-in-2019/" /><meta property="article:section" content="notebook" />
+<meta property="article:published_time" content="2019-12-31T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-31T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="5 bugs in 2019"/>
+<meta name="twitter:description" content="Troubleshooting I&#39;ve done in 2019."/>
+
+
+
+<meta itemprop="name" content="5 bugs in 2019">
+<meta itemprop="description" content="Troubleshooting I&#39;ve done in 2019."><meta itemprop="datePublished" content="2019-12-31T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-31T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="184">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: initial;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+</style>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J0GL63757"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6J0GL63757');
+</script></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming&#39;s blog</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/notebook/">Notebook</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <p><img src="/images/2019/bugs/bugs.PNG" alt="lowly worm from busy town"></p>
+<h2 id="1-windows-10-copy-and-paste-stop-working">1. Windows 10: Copy and paste stop working</h2>
+<p><strong>Fix:</strong> This PC &gt; right click my hard drive &gt; Properties &gt; &ldquo;Tools&rdquo; tab &gt; &ldquo;Check&rdquo; button.</p>
+<h2 id="2-git-bash-could-not-fork-child-process-there-are-no-available-terminals--1">2. Git Bash: Could not fork child process-There are no available terminals (-1)</h2>
+<p><img src="/images/2019/bugs/gitBashCrash.png" alt="git bash crash"></p>
+<p><strong>Fix:</strong> In terminal, kill <code>ssh-agent.exe</code> using <code>taskkill /F /IM ssh-agent.exe</code>.</p>
+<h2 id="3-react-something-is-already-running-on-port-3000">3. React: something is already running on port 3000</h2>
+<p><img src="/images/2019/bugs/port3000.PNG" alt="something is already running on port 3000"></p>
+<p><strong>Fix:</strong> In terminal:</p>
+<ul>
+<li>run <code>netstat -ano | findstr :3000</code> and should get a response of <code>TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       16028</code>.</li>
+<li>after that, kill it by typing <code>taskkill /PID 16028 /F</code>.</li>
+</ul>
+<h2 id="4-visual-studio-markdownlint-hard-tabs">4. Visual Studio: markdownlint hard tabs</h2>
+<p>Yellow lines appear whenever I copy and paste code.</p>
+<p><img src="/images/2019/bugs/markdownlint.PNG" alt="markdownlint hard tabs"></p>
+<p>And I will get weird spacing on the post.</p>
+<p><img src="/images/2019/bugs/markdownlint_before.PNG" alt="markdownlint hard tabs result"></p>
+<p><strong>Fix:</strong> Open the command palette by pressing <code>Ctrl+Shift+P</code>, type &ldquo;markdownlint&rdquo; and select &ldquo;Fix supported markdownlint violations in this document&rdquo;.</p>
+<p><img src="/images/2019/bugs/markdownlint_fastSolution.gif" alt="markdownlint hard tabs quick fix"></p>
+<p>The spacing on post will go back to normal.</p>
+<p><img src="/images/2019/bugs/markdownlint_after.PNG" alt="markdownlint hard tabs fixed result"></p>
+<h2 id="5-jekyll-faradayclienterror">5. Jekyll Faraday::ClientError</h2>
+<p>When I try to serve my Jekyll website locally by doing <code>bundle exec jekyll serve</code>, I will receive:</p>
+<pre><code class="language-console" data-lang="console">jekyll 3.8.5 | Error:  uninitialized constant Faraday::Error::ClientError
+Did you mean?  Faraday::ClientError
+</code></pre><p><strong>Fix:</strong> In <code>Gemfile.lock</code>, change <code>faraday (1.0.0)</code> to <code>faraday (0.17.0)</code> and run <code>bundle install</code>.</p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

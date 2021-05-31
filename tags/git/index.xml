@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/tags/git/</link>
+    <description>Recent content in git on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Sat, 05 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is rebase?</title>
+      <link>https://mingyong.dev/blog/what-is-rebase/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/what-is-rebase/</guid>
+      <description>Imagine you and a co-worker are in charge of tickets A and B for a new feature. Let&amp;rsquo;s say it is on the feature branch. Your co-worker completed the ticket before you do and this is how the branch looks like when you are ready to submit your PR:
+In your local history, your work has the index(or SHA) of 2 but on the feature branch 2 is B.
+We want to maintain a linear commit history and avoid as many merge conflicts as we can.</description>
+    </item>
+    
+  </channel>
+</rss>

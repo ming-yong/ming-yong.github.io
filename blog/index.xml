@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <link>https://mingyong.dev/blog/</link>
+    <description>Recent content in Blogs on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to set up Namecheap domain and subdomain on GitHub Pages</title>
+      <link>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</guid>
+      <description>Setting up a custom domain According to the &amp;ldquo;configuring an apex domain&amp;rdquo; GitHub document and &amp;ldquo;Connect GitHub Pages to Your Namecheap Domain&amp;rdquo; by Paul J. Williams, there are two steps to use your custom domain for &amp;lt;username&amp;gt;.github.io:
+ add 4 A records and a CNAME record on Namecheap (&amp;ldquo;Domain List&amp;rdquo; &amp;gt; &amp;ldquo;Advanced DNS&amp;rdquo; &amp;gt; Add those records under &amp;ldquo;Host Records&amp;rdquo;) add a CNAME file to your GitHub repository (you can add a file or do it through &amp;ldquo;Settings&amp;rdquo; &amp;gt; &amp;ldquo;Options&amp;rdquo; &amp;gt; Add a &amp;ldquo;Custom domain&amp;rdquo; under &amp;ldquo;GitHub Pages&amp;rdquo;)  You don&amp;rsquo;t have to purchase the SSL certificate from Namecheap or manually install one.</description>
+    </item>
+    
+    <item>
+      <title>A visit to the Tutorial Hell</title>
+      <link>https://mingyong.dev/blog/a-visit-to-the-tutorial-hell/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/a-visit-to-the-tutorial-hell/</guid>
+      <description>Like all others who try to teach themselves how to code, I once visited the famous Tutorial Hell.
+It all started when I landed in the project section of freeCodeCamp&amp;rsquo;s Responsive Web Design Certification. I have completed all lessons before it, so I guess, technically, I should (at least) know how to start the project.
+No, I don&amp;rsquo;t. Well, if not, I can always watch a tutorial on YouTube.
+One after another, watching tutorials started feeling like talking to my dad: I keep getting an already told story/concept.</description>
+    </item>
+    
+    <item>
+      <title>What is rebase?</title>
+      <link>https://mingyong.dev/blog/what-is-rebase/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/what-is-rebase/</guid>
+      <description>Imagine you and a co-worker are in charge of tickets A and B for a new feature. Let&amp;rsquo;s say it is on the feature branch. Your co-worker completed the ticket before you do and this is how the branch looks like when you are ready to submit your PR:
+In your local history, your work has the index(or SHA) of 2 but on the feature branch 2 is B.
+We want to maintain a linear commit history and avoid as many merge conflicts as we can.</description>
+    </item>
+    
+    <item>
+      <title>5 shortcut keys that help you code faster🏃‍♀️💨</title>
+      <link>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</guid>
+      <description>What I think I look like when I am using them:
+Please note that I am using a Windows keyboard. Other than that, the following shortcuts are not specific to any IDE or editor.
+🏃‍♀️💨 Move the cursor one word at a time  Ctrl + arrow keys to move your cursor one word at a time. Hold down the Shift key to highlight.  Useful for:
+ deleting or cutting the whole word (highlight and backspace/Ctrl+X).</description>
+    </item>
+    
+    <item>
+      <title>Years in review: 2018ish to July 2020</title>
+      <link>https://mingyong.dev/blog/review-july-2020/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/review-july-2020/</guid>
+      <description>I started learning code and English in 2018 (maybe late 2017ish) to attend community college in Canada in September 2018. My learning journey so far can be divided into two phases: the &amp;ldquo;English and Code gives me headaches&amp;rdquo; phase (phase 1) and the &amp;ldquo;oh I am so lost&amp;rdquo; phase (phase 2). This post is about what I did during those phases and what I think I can improve.
+Phase 1: Learn the basics If my memory serves me right, my first attempt at the first freeCodeCamp project was around January 2018.</description>
+    </item>
+    
+  </channel>
+</rss>
