@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog post fetcher with React &#43; hitting GraphQL endpoint | (ง •̀_•́)ง Ming&#39;s blog</title>
+<meta name="title" content="Blog post fetcher with React &#43; hitting GraphQL endpoint" />
+<meta name="description" content="Blog post fetcher with React hitting GraphQL endpoint" />
+<meta name="keywords" content="React,GraphQL," />
+
+
+<meta property="og:title" content="Blog post fetcher with React &#43; hitting GraphQL endpoint" />
+<meta property="og:description" content="Blog post fetcher with React hitting GraphQL endpoint" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/blog/matalogue/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-06-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-04T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blog post fetcher with React &#43; hitting GraphQL endpoint"/>
+<meta name="twitter:description" content="Blog post fetcher with React hitting GraphQL endpoint"/>
+
+
+
+<meta itemprop="name" content="Blog post fetcher with React &#43; hitting GraphQL endpoint">
+<meta itemprop="description" content="Blog post fetcher with React hitting GraphQL endpoint"><meta itemprop="datePublished" content="2021-06-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="642">
+<meta itemprop="keywords" content="React,GraphQL," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming&#39;s blog</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/notebook/">Notebook</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+  
+  <h1>Blog post fetcher with React &#43; hitting GraphQL endpoint</h1>
+  <p>
+    <i>
+      <time datetime='2021-06-04' pubdate>
+        04 Jun, 2021
+      </time>
+    </i>
+  </p>
+  
+
+<content>
+  <p>This post provides the building blocks (like lego) to help you build something similar. You can <a href="https://github.com/ming-yong/matalogue/blob/master/src/index.js">click here to view the code</a> and <a href="https://matalogue.mingy.space/">here for the demo</a>.</p>
+<p>I have been a user of Matters (a mainly Mandarin blogging platform) for a while now. The user home page design fits about three articles.</p>
+<p><img src="/images/2021/matalogue/userHomePage.png" alt="user home page"></p>
+<p>This results in an &ldquo;infinite scroll hell&rdquo; homepage for users who has many articles. Their contents will sink to the bottom and never see the sunlight.</p>
+<p>Some users started to create a &ldquo;content page post&rdquo; with all the articles they have written, but for users with 100 and more articles, doing this by hand is just too big of a hassle.</p>
+<p>I see the need for a blog post fetcher, so I build one. The fetcher works like this:</p>
+<p><img src="/images/2021/matalogue/matalogue.gif" alt="matalogue"></p>
+<p>Users can enter their username along with a number to fetch the first N posts. Click fetch. Users will then see an editing page that allows them to choose if they want their articles with date, numbered, and in chronological order or not. When they are happy with the editing, they can copy everything by clicking the copy button.</p>
+<h2 id="building-block-1-stepping-between-steps">Building block 1: Stepping between steps</h2>
+<p><img src="/images/2021/matalogue/matalogueStep1.png" alt="step1"></p>
+<p>My main component contains a header(1), the <code>content</code> div(2), and the footer(3). Inside the <code>content</code> div, there are two children components:</p>
+<ol>
+<li><strong>Step1</strong>: the page where users enter username and click fetch (image above).</li>
+<li><strong>Step2</strong>: the editing page (image below).</li>
+</ol>
+<p><img src="/images/2021/matalogue/matalogueStep2.png" alt="step2"></p>
+<p>To display the correct component on each step,  I have an if statement checking if the variable <code>currentStep</code> in the state is relevant.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">//Return both components
+</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;contentBox&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+  &lt;<span style="color:#f92672">Step1</span> 
+  <span style="color:#a6e22e">currentStep </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">currentStep</span> } 
+  <span style="color:#a6e22e">userInfo </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">userInfo</span> } 
+  <span style="color:#a6e22e">handleInput </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleInput</span> } 
+  <span style="color:#a6e22e">grabPosts </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grabPosts</span> } 
+  /&gt;
+  &lt;<span style="color:#f92672">Step2</span> 
+  <span style="color:#a6e22e">currentStep </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">currentStep</span> } 
+  <span style="color:#a6e22e">articles </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">articles</span> } 
+  <span style="color:#a6e22e">edit </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">edit</span> } 
+  <span style="color:#a6e22e">handleEdit </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleEdit</span> } 
+  <span style="color:#a6e22e">goBackToStepOne </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">goBackToStepOne</span> } 
+  <span style="color:#a6e22e">copyToClipBoard </span><span style="color:#f92672">=</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">copyToClipBoard</span> }
+  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+<span style="color:#75715e">//Check in each  
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Step2</span>(<span style="color:#a6e22e">props</span>) {
+ <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">currentStep</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">2</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+ }
+ ...
+}
+</code></pre></div><h2 id="building-block-2-updating-the-state">Building block 2: Updating the state</h2>
+<p>Input data are stored as two objects in the state. Thus I break them into two functions. The only difference is to use the <code>checked</code> value when it is a checkbox. Otherwise, they both make a copy of the original state object and store the new value back to the state.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#a6e22e">handleEdit</span>(<span style="color:#a6e22e">event</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">checked</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">name</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newEdit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">edit</span>;
+  <span style="color:#a6e22e">newEdit</span>[<span style="color:#a6e22e">name</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">edit</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newEdit</span> });
+ }
+
+ <span style="color:#a6e22e">handleInput</span>(<span style="color:#a6e22e">event</span>) {
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">value</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newInfo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">userInfo</span>;
+  <span style="color:#a6e22e">newInfo</span>[<span style="color:#a6e22e">name</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">userInfo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newInfo</span> });
+ }
+</code></pre></div><h2 id="building-block-3-hitting-the-graphql-endpoint">Building block 3: Hitting the GraphQL endpoint</h2>
+<p>The fetch button triggers a function <code>grabPosts</code>, which performs a fetch and updates the state.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">userName</span>, <span style="color:#a6e22e">first</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">userInfo</span>;
+<span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">fetchURL</span>, {
+    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span> },
+    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+    <span style="color:#a6e22e">query</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fetchQuery</span>,
+    <span style="color:#a6e22e">variables</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">userName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">userName</span>,
+    <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> parseInt(<span style="color:#a6e22e">first</span>),
+    },
+  },
+})
+.<span style="color:#a6e22e">then</span>(...)
+.<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">result</span>) =&gt; {
+  ...
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">currentStep</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">articles</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fetchedArticles</span> });
+})
+.<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">err</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>));
+</code></pre></div><h2 id="building-block-4-editing-and-copy-to-clipboard">Building block 4: Editing and copy to clipboard</h2>
+<p>I passed the data to <strong>Step2</strong> as <code>articles</code> and apply all the edit options before displaying.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//Apply the edit options
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">startDate</span>, <span style="color:#a6e22e">endDate</span>, <span style="color:#a6e22e">withNum</span>, <span style="color:#a6e22e">withDate</span>, <span style="color:#a6e22e">sortDateAsc</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">edit</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">articles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">articles</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; (<span style="color:#a6e22e">sortDateAsc</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">date</span>) <span style="color:#f92672">-</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">date</span>) <span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">date</span>) <span style="color:#f92672">-</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">date</span>)));
+
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">startDate</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#a6e22e">articles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">articles</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">article</span>) =&gt; <span style="color:#a6e22e">article</span>.<span style="color:#a6e22e">date</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">startDate</span>);
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">endDate</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#a6e22e">articles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">articles</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">article</span>) =&gt; <span style="color:#a6e22e">article</span>.<span style="color:#a6e22e">date</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">endDate</span>);
+
+<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">articles</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">index</span>) =&gt; <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Article</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">index</span>} <span style="color:#a6e22e">link</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">link</span>} <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">title</span>} <span style="color:#a6e22e">date</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)} <span style="color:#a6e22e">no</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>} <span style="color:#a6e22e">withNum</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">withNum</span>} <span style="color:#a6e22e">withDate</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">withDate</span>} <span style="color:#f92672">/&gt;</span>);
+
+<span style="color:#75715e">//To display
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;articles&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;articles&#34;</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">display</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></div><p>I found this piece of code online to copy everything to the clipboard:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">articles</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;articles&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">btnCopy</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;btnCopy&#34;</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createRange</span>();
+<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">selectNode</span>(<span style="color:#a6e22e">articles</span>);
+window.<span style="color:#a6e22e">getSelection</span>().<span style="color:#a6e22e">removeAllRanges</span>();
+window.<span style="color:#a6e22e">getSelection</span>().<span style="color:#a6e22e">addRange</span>(<span style="color:#a6e22e">r</span>);
+document.<span style="color:#a6e22e">execCommand</span>(<span style="color:#e6db74">&#39;copy&#39;</span>);
+window.<span style="color:#a6e22e">getSelection</span>().<span style="color:#a6e22e">removeAllRanges</span>();
+</code></pre></div>
+</content>
+<p>
+  
+  <a href="https://mingyong.dev/tags/react/">#React</a>
+  
+  <a href="https://mingyong.dev/tags/graphql/">#GraphQL</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

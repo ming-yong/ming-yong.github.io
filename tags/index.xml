@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
-    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GraphQL</title>
+      <link>https://mingyong.dev/tags/graphql/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://mingyong.dev/tags/react/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/react/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hosting</title>
       <link>https://mingyong.dev/tags/hosting/</link>

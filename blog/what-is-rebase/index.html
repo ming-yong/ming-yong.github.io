@@ -109,11 +109,13 @@
     padding: 20px;
      
     font-size: 14px;
+    overflow: auto;
   }
 
   div.highlight code {
     background-color: unset;
-    color: initial;
+     
+    color:white;
   }
 
   blockquote {
@@ -239,10 +241,10 @@
 
 <content>
   <p>Imagine you and a co-worker are in charge of tickets A and B for a new feature. Let&rsquo;s say it is on the <code>feature</code> branch. Your co-worker completed the ticket before you do and this is how the branch looks like when you are ready to submit your PR:</p>
-<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/ygshu0o340oj8njdimft.png" alt="Alt Text"></p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/ygshu0o340oj8njdimft.png" alt="branching"></p>
 <p>In your local history, your work has the index(or SHA) of 2 but on the <code>feature</code> branch 2 is B.</p>
 <p>We want to maintain a <strong>linear commit history</strong> and <strong>avoid</strong> as many <strong>merge conflicts</strong> as we can. In other words, we want to achieve something like this:</p>
-<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/dgmd58ef9uiuk515k9if.png" alt="Alt Text"></p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/dgmd58ef9uiuk515k9if.png" alt="merging"></p>
 <p>We do that with rebase.</p>
 <h2 id="how-to-rebasewith-sourcetree">How to rebase(with SourceTree)</h2>
 <ol>

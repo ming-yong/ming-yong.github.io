@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Form the query you need from a GraphQL API documentation | (ง •̀_•́)ง Ming&#39;s blog</title>
+<meta name="title" content="Form the query you need from a GraphQL API documentation" />
+<meta name="description" content="How to read a GraphQL documentation" />
+<meta name="keywords" content="GraphQL," />
+
+
+<meta property="og:title" content="Form the query you need from a GraphQL API documentation" />
+<meta property="og:description" content="How to read a GraphQL documentation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/blog/forming-a-graphql-query/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-06-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-04T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Form the query you need from a GraphQL API documentation"/>
+<meta name="twitter:description" content="How to read a GraphQL documentation"/>
+
+
+
+<meta itemprop="name" content="Form the query you need from a GraphQL API documentation">
+<meta itemprop="description" content="How to read a GraphQL documentation"><meta itemprop="datePublished" content="2021-06-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="322">
+<meta itemprop="keywords" content="GraphQL," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming&#39;s blog</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/notebook/">Notebook</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+  
+  <h1>Form the query you need from a GraphQL API documentation</h1>
+  <p>
+    <i>
+      <time datetime='2021-06-04' pubdate>
+        04 Jun, 2021
+      </time>
+    </i>
+  </p>
+  
+
+<content>
+  <p>It is my first time reading GraphQL API documentation. I don&rsquo;t know if they are all this complicated so I wrote a post just in case.</p>
+<p>You can find the API documentation and the sandbox at <a href="https://server.matters.news/playground">https://server.matters.news/playground</a>. My goal today is to fetch all articles for a user.</p>
+<p>When you first open the documentation (Click &ldquo;DOCS&rdquo; on your right-hand side), you can see a &ldquo;Queries&rdquo; section and a &ldquo;Mutation&rdquo; section. The former doesn&rsquo;t require any authentication, vice versa.</p>
+<p><img src="/images/2021/graphql/userParam.png" alt="parameters for user"></p>
+<p>Select the &ldquo;user&rdquo; option(1) under the &ldquo;Queries&rdquo; section. Scroll down and click the &ldquo;input&rdquo; option(2). This shows what parameters you need for &ldquo;user&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#960050;background-color:#1e0010">//</span>in sandbox
+<span style="color:#66d9ef">query</span> {
+  <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: <span style="color:#e6db74">&#34;yourUserName&#34;</span>}) {
+}
+
+<span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">in</span> <span style="color:#a6e22e">code</span>
+   <span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!) {
+    <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
+    }
+   }
+</code></pre></div><p>Scroll up. Under the &ldquo;Type Details&rdquo; section, you will find all the properties you can retrieve.</p>
+<p><img src="/images/2021/graphql/articlesParam.png" alt="parameters for articles"></p>
+<p>Select &ldquo;articles&rdquo;(3) and check the arguments we need(4).</p>
+<p>If we want to pass the <code>first</code> arguments to indicate fetching the first N posts. The query becomes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#960050;background-color:#1e0010">//</span>in sandbox
+<span style="color:#66d9ef">query</span> {
+  <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: <span style="color:#e6db74">&#34;yourUserName&#34;</span>}) {
+   <span style="color:#a6e22e">articles</span>(<span style="color:#a6e22e">input</span>: { <span style="color:#a6e22e">first</span>: <span style="color:#a6e22e">4</span> }) {
+   }
+  }
+ }
+
+<span style="color:#960050;background-color:#1e0010">//</span>in code
+<span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!, $first: <span style="color:#a6e22e">Int</span>!) {
+  <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
+      <span style="color:#a6e22e">articles</span>(<span style="color:#a6e22e">input</span>: { <span style="color:#a6e22e">first</span>: $first }) {
+      }
+  }
+}
+</code></pre></div><p>Moving on.</p>
+<p><img src="/images/2021/graphql/articles.png" alt="articles"></p>
+<p>Now we have selected &ldquo;users(1)-&gt;articles(2)&rdquo;. All articles are stored as a node under edges, so &ldquo;users-&gt;articles-&gt;edges(3)-&gt;node(4)&rdquo;.</p>
+<p>Finally, we found the <code>article</code> node(5) and we can fill in whatever we want to fetch.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#960050;background-color:#1e0010">//</span>in sandbox
+ <span style="color:#66d9ef">query</span> {
+  <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: <span style="color:#e6db74">&#34;yourUserName&#34;</span>}) {
+   <span style="color:#a6e22e">articles</span>(<span style="color:#a6e22e">input</span>: { <span style="color:#a6e22e">first</span>: <span style="color:#a6e22e">4</span> }) {
+    edges {
+     node {
+      title
+      slug
+      mediaHash
+      createdAt
+     }
+    }
+   }
+  }
+ }
+
+<span style="color:#960050;background-color:#1e0010">//</span>in code
+   <span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!, $first: <span style="color:#a6e22e">Int</span>!) {
+    <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
+     <span style="color:#a6e22e">articles</span>(<span style="color:#a6e22e">input</span>: { <span style="color:#a6e22e">first</span>: $first }) {
+      <span style="color:#a6e22e">edges</span> {
+       node {
+        title
+        slug
+        mediaHash
+        createdAt
+       }
+      }
+     }
+    }
+   }
+</code></pre></div><p>This query will fetch the &ldquo;title&rdquo;, &ldquo;slug&rdquo;, &ldquo;mediaHash&rdquo;, and &ldquo;createdAt&rdquo; of the first <code>$first</code> articles that belongs to <code>$userName</code>.</p>
+
+</content>
+<p>
+  
+  <a href="https://mingyong.dev/tags/graphql/">#GraphQL</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

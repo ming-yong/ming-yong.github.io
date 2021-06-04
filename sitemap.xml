@@ -3,19 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mingyong.dev/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
+    <loc>https://mingyong.dev/blog/matalogue/</loc>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mingyong.dev/blog/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/blog/forming-a-graphql-query/</loc>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/tags/graphql/</loc>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/tags/react/</loc>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/tags/</loc>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/tags/hosting/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mingyong.dev/tags/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/blog/a-visit-to-the-tutorial-hell/</loc>

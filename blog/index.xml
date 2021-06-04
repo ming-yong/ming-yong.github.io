@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
-    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog post fetcher with React &#43; hitting GraphQL endpoint</title>
+      <link>https://mingyong.dev/blog/matalogue/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/matalogue/</guid>
+      <description>This post provides the building blocks (like lego) to help you build something similar. You can click here to view the code and here for the demo.
+I have been a user of Matters (a mainly Mandarin blogging platform) for a while now. The user home page design fits about three articles.
+This results in an &amp;ldquo;infinite scroll hell&amp;rdquo; homepage for users who has many articles. Their contents will sink to the bottom and never see the sunlight.</description>
+    </item>
+    
+    <item>
+      <title>Form the query you need from a GraphQL API documentation</title>
+      <link>https://mingyong.dev/blog/forming-a-graphql-query/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/forming-a-graphql-query/</guid>
+      <description>It is my first time reading GraphQL API documentation. I don&amp;rsquo;t know if they are all this complicated so I wrote a post just in case.
+You can find the API documentation and the sandbox at https://server.matters.news/playground. My goal today is to fetch all articles for a user.
+When you first open the documentation (Click &amp;ldquo;DOCS&amp;rdquo; on your right-hand side), you can see a &amp;ldquo;Queries&amp;rdquo; section and a &amp;ldquo;Mutation&amp;rdquo; section. The former doesn&amp;rsquo;t require any authentication, vice versa.</description>
+    </item>
+    
     <item>
       <title>How to set up Namecheap domain and subdomain on GitHub Pages</title>
       <link>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</link>
