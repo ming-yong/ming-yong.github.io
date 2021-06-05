@@ -251,10 +251,10 @@
 }
 
 <span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">in</span> <span style="color:#a6e22e">code</span>
-   <span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!) {
-    <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
-    }
-   }
+<span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!) {
+  <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
+  }
+}
 </code></pre></div><p>Scroll up. Under the &ldquo;Type Details&rdquo; section, you will find all the properties you can retrieve.</p>
 <p><img src="/images/2021/graphql/articlesParam.png" alt="parameters for articles"></p>
 <p>Select &ldquo;articles&rdquo;(3) and check the arguments we need(4). We have three optional arguments: <code>after</code>, <code>first</code>, and <code>oss</code>.</p>
@@ -295,20 +295,20 @@
  }
 
 <span style="color:#960050;background-color:#1e0010">//</span>in code
-   <span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!, $first: <span style="color:#a6e22e">Int</span>!) {
-    <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
-     <span style="color:#a6e22e">articles</span>(<span style="color:#a6e22e">input</span>: { <span style="color:#a6e22e">first</span>: $first }) {
+<span style="color:#66d9ef">query</span> ($userName: <span style="color:#a6e22e">String</span>!, $first: <span style="color:#a6e22e">Int</span>!) {
+  <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: $userName }) {
+    <span style="color:#a6e22e">articles</span>(<span style="color:#a6e22e">input</span>: { <span style="color:#a6e22e">first</span>: $first }) {
       <span style="color:#a6e22e">edges</span> {
-       node {
+        node {
         title
         slug
         mediaHash
         createdAt
-       }
+        }
       }
-     }
     }
-   }
+  }
+}
 </code></pre></div><p>This query will fetch the &ldquo;title&rdquo;, &ldquo;slug&rdquo;, &ldquo;mediaHash&rdquo;, and &ldquo;createdAt&rdquo; of the first <code>$first</code> articles that belongs to <code>$userName</code>.</p>
 
 </content>
