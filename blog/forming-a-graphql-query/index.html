@@ -30,7 +30,7 @@
 <meta itemprop="name" content="Form the query you need from a GraphQL API documentation">
 <meta itemprop="description" content="How to read a GraphQL documentation"><meta itemprop="datePublished" content="2021-06-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="322">
+<meta itemprop="wordCount" content="349">
 <meta itemprop="keywords" content="GraphQL," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -244,7 +244,7 @@
 <p>You can find the API documentation and the sandbox at <a href="https://server.matters.news/playground">https://server.matters.news/playground</a>. My goal today is to fetch all articles for a user.</p>
 <p>When you first open the documentation (Click &ldquo;DOCS&rdquo; on your right-hand side), you can see a &ldquo;Queries&rdquo; section and a &ldquo;Mutation&rdquo; section. The former doesn&rsquo;t require any authentication, vice versa.</p>
 <p><img src="/images/2021/graphql/userParam.png" alt="parameters for user"></p>
-<p>Select the &ldquo;user&rdquo; option(1) under the &ldquo;Queries&rdquo; section. Scroll down and click the &ldquo;input&rdquo; option(2). This shows what parameters you need for &ldquo;user&rdquo;.</p>
+<p>Select the &ldquo;user&rdquo; option(1) under the &ldquo;Queries&rdquo; section. Scroll down and click the &ldquo;input&rdquo; option(2). This shows what parameters you need for &ldquo;user&rdquo;. Here you can see we need to pass <code>userName</code>, so the query will look something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#960050;background-color:#1e0010">//</span>in sandbox
 <span style="color:#66d9ef">query</span> {
   <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: <span style="color:#e6db74">&#34;yourUserName&#34;</span>}) {
@@ -257,8 +257,8 @@
    }
 </code></pre></div><p>Scroll up. Under the &ldquo;Type Details&rdquo; section, you will find all the properties you can retrieve.</p>
 <p><img src="/images/2021/graphql/articlesParam.png" alt="parameters for articles"></p>
-<p>Select &ldquo;articles&rdquo;(3) and check the arguments we need(4).</p>
-<p>If we want to pass the <code>first</code> arguments to indicate fetching the first N posts. The query becomes:</p>
+<p>Select &ldquo;articles&rdquo;(3) and check the arguments we need(4). We have three optional arguments: <code>after</code>, <code>first</code>, and <code>oss</code>.</p>
+<p>Let&rsquo;s say we want to pass in <code>first</code> that indicates to fetch the first N posts. The query becomes:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#960050;background-color:#1e0010">//</span>in sandbox
 <span style="color:#66d9ef">query</span> {
   <span style="color:#a6e22e">user</span>(<span style="color:#66d9ef">input</span>: { <span style="color:#a6e22e">userName</span>: <span style="color:#e6db74">&#34;yourUserName&#34;</span>}) {

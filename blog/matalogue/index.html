@@ -30,7 +30,7 @@
 <meta itemprop="name" content="Blog post fetcher with React &#43; hitting GraphQL endpoint">
 <meta itemprop="description" content="Blog post fetcher with React hitting GraphQL endpoint"><meta itemprop="datePublished" content="2021-06-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="642">
+<meta itemprop="wordCount" content="644">
 <meta itemprop="keywords" content="React,GraphQL," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -241,6 +241,7 @@
 
 <content>
   <p>This post provides the building blocks (like lego) to help you build something similar. You can <a href="https://github.com/ming-yong/matalogue/blob/master/src/index.js">click here to view the code</a> and <a href="https://matalogue.mingy.space/">here for the demo</a>.</p>
+<h2 id="the-idea">The idea</h2>
 <p>I have been a user of Matters (a mainly Mandarin blogging platform) for a while now. The user home page design fits about three articles.</p>
 <p><img src="/images/2021/matalogue/userHomePage.png" alt="user home page"></p>
 <p>This results in an &ldquo;infinite scroll hell&rdquo; homepage for users who has many articles. Their contents will sink to the bottom and never see the sunlight.</p>
@@ -320,7 +321,7 @@
 })
 .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">err</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>));
 </code></pre></div><h2 id="building-block-4-editing-and-copy-to-clipboard">Building block 4: Editing and copy to clipboard</h2>
-<p>I passed the data to <strong>Step2</strong> as <code>articles</code> and apply all the edit options before displaying.</p>
+<p>I passed the data to <strong>Step2</strong> as <code>articles</code> and do all the editing before displaying them.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//Apply the edit options
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">startDate</span>, <span style="color:#a6e22e">endDate</span>, <span style="color:#a6e22e">withNum</span>, <span style="color:#a6e22e">withDate</span>, <span style="color:#a6e22e">sortDateAsc</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">edit</span>;
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">articles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">articles</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; (<span style="color:#a6e22e">sortDateAsc</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">date</span>) <span style="color:#f92672">-</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">date</span>) <span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">date</span>) <span style="color:#f92672">-</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">date</span>)));
