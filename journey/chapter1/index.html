@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>From zero to a blog | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="From zero to a blog" />
+<meta name="description" content="Chapter 1 of my coding journey" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="From zero to a blog" />
+<meta property="og:description" content="Chapter 1 of my coding journey" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/journey/chapter1/" /><meta property="article:section" content="journey" />
+<meta property="article:published_time" content="2020-07-05T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-07-05T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="From zero to a blog"/>
+<meta name="twitter:description" content="Chapter 1 of my coding journey"/>
+
+
+
+<meta itemprop="name" content="From zero to a blog">
+<meta itemprop="description" content="Chapter 1 of my coding journey"><meta itemprop="datePublished" content="2020-07-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="700">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+  
+  <h1>From zero to a blog</h1>
+  <p>
+    <i>
+      <time datetime='2020-07-05' pubdate>
+        05 Jul, 2020
+      </time>
+    </i>
+  </p>
+  
+
+<content>
+  <h2 id="content">Content</h2>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#appendix-a-projects-i-built">Appendix A: Projects I built</a></li>
+<li><a href="#appendix-a-projects-i-built">Appendix B: Notes I took</a></li>
+<li><a href="#appendix-c-for-memories">Appendix C: For memories</a></li>
+</ul>
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Timeline</th>
+<th>What I did</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Before</td>
+<td>Zero coding experience and barely use English in my daily life.</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Started learning <strong>HTML and CSS</strong> on <a href="https://www.freecodecamp.org/">freeCodeCamp</a> and completed the <em>Responsive Web Design</em> course.</td>
+</tr>
+<tr>
+<td></td>
+<td>Took <a href="https://javascript30.com/"><strong>JavaScript30</strong></a>, a free course by WesBos, after completing <em>JavaScript Algorithms and Data Structures</em> on freeCodeCamp.</td>
+</tr>
+<tr>
+<td>05/2019</td>
+<td>Want to build a &ldquo;real&rdquo; project. Learn <strong>Git and GitHub</strong> by watching <a href="https://www.youtube.com/user/shiffman">The Coding Train</a>&rsquo;s videos and put together a responsive Jekyll blog from scratch.</td>
+</tr>
+<tr>
+<td></td>
+<td>Learn <strong>how to work with APIs</strong>, also from The Coding Train.</td>
+</tr>
+<tr>
+<td></td>
+<td>Attend local workshop and meetup to meet developers. Joined a collaboration program, <a href="https://chingu.io/">Chingu</a>, where I worked with three other developers online creating a Momentum clone.</td>
+</tr>
+<tr>
+<td></td>
+<td>Learn some basic <strong>React</strong> through FreeCodeCamp&rsquo;s <em>Front End Libraries</em> course.</td>
+</tr>
+<tr>
+<td>03/2020</td>
+<td>I stopped in the middle of my freeCodeCamp <em>Data Visualization</em> course to focus on my internship.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="things-i-found-effective-">Things I found effective 👍</h3>
+<ul>
+<li>Joining the <a href="https://www.100daysofcode.com/">100DaysOfCode</a> Twitter challenge to build up momentum.</li>
+<li>Using <a href="https://codepen.io/">CodePen</a> (an online code editor) at the very beginning because setting up the environment can be scary. CodePen allows you to focus on the code.</li>
+<li>Pushing my projects to GitHub. Very good for practicing basic Git commands like <code>add</code>, <code>commit</code>, and <code>push</code>.</li>
+<li>Going beyond tutorials by:
+<ul>
+<li>Writing <a href="https://mingyong.dev/JS30/notes/01-drum-kit.html">documentation</a> for every JS30 project. Each consist of a demo gif (shows users the result without clicking further), users stories (what can users expect), notes on all the &ldquo;building block&rdquo; (what do you need to know to rebuild this).</li>
+<li>Combining tutorials into one project, for example, the <a href="https://mingyong.dev/JS30/notes/12-give-me-gif.html">random GIF generator</a>.</li>
+</ul>
+</li>
+<li>Learning a few shortcut keys. Definitely a productivity booster!</li>
+</ul>
+<h3 id="things-i-found-not-so-effective">Things I found not so effective🤷‍♀️</h3>
+<ul>
+<li>Trying to contribute to open source projects by participating in <a href="https://hacktoberfest.digitalocean.com/">Hacktoberfest</a>. I was only able to make &ldquo;typo fixes&rdquo; type of commits&hellip;</li>
+<li>Following a &ldquo;learning path&rdquo; instead of learning what you would like to learn at that time.</li>
+</ul>
+<h3 id="i-wish-someone-would-have-told-me">I wish someone would have told me🤔</h3>
+<ul>
+<li>Feeling lost is part of the process. Just keep learning.</li>
+<li>The basic setup is Git, any code editor (Atom, Sublime Text, Visual Studio Code), and a GitHub account.</li>
+<li>Don&rsquo;t try to code HTML and CSS simultaneously. HTML, then CSS, then JavaScript.</li>
+</ul>
+<h2 id="appendix-a-projects-i-built">🍥Appendix A: Projects I built</h2>
+<p><ul class="blog-posts">
+	
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">HTML and CSS project(s):</h3>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/rPxZmM">HTML&amp;CSS survey form</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/qGmewz">HTML&amp;CSS product landing page</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/rgzMRd">HTML&amp;CSS technical documentation page</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/LKBrJQ">HTML&amp;CSS tribute page</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/ewLyWP">HTML&amp;CSS portfolio page</a></li>
+			
+		
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">Data Structure and Algorithm project(s):</h3>
+			
+				<li><a href="https://github.com/ming-yong/Algorithm-Practice">Basic Data Structure and Algorithm</a></li>
+			
+		
+	
+			
+	
+			
+	
+			
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">JavaScript project(s):</h3>
+			
+				<li><a href="https://github.com/ming-yong/JS30">~30 Vanilla JavaScript projects</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/WVrNBa">Vanilla JavaScript Rock Paper Scissors</a></li>
+			
+		
+	
+			
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">Responsive Website project(s):</h3>
+			
+				<li><a href="https://github.com/ming-yong/archive">Responsive Jekyll Blog from scratch</a></li>
+			
+		
+	
+			
+	
+			
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+	
+			
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">Working with APIs project(s):</h3>
+			
+				<li><a href="https://github.com/ming-yong/JS30-12-give-me-gif">NodeJS&amp;API random gif generator</a></li>
+			
+				<li><a href="https://github.com/ming-yong/client-server-database">NodeJS&amp;API client server database</a></li>
+			
+				<li><a href="https://github.com/ming-yong/twitterBot">NodeJS&amp;API twitter bot</a></li>
+			
+		
+	
+			
+	
+			
+	
+			
+	
+			
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">React project(s):</h3>
+			
+				<li><a href="https://github.com/ming-yong/react-tic-tac-toe">React Tic Tac toe</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/rNambzz?editors=0010">React markdown previewer</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/ExaXQjp">React drum machine</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/xxbPoMo">React calculator</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/JjoajKd">React pomodoro clock</a></li>
+			
+				<li><a href="https://github.com/ming-yong/random-quote-machine">React random quote machine</a></li>
+			
+		
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+	
+			
+			<h3 style="margin-bottom:0">Chingu related project(s):</h3>
+			
+				<li><a href="https://github.com/ming-yong/Favorite-Fonts">Convert PNG to Code</a></li>
+			
+				<li><a href="https://mingyong.medium.com/introducing-moto-from-chingu-voyage-13-c1c1f9e98f80">Momentum clone</a></li>
+			
+		
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+</ul>
+
+<ul class="blog-posts">
+	
+	
+			
+			<h3 style="margin-bottom:0">Data Visualization project(s):</h3>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/XWJOGoq">D3 bar chart</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/vYOJGLy">D3 scatterplot graph</a></li>
+			
+				<li><a href="https://codepen.io/ming-yong/pen/MWwrrLJ">D3 heat map</a></li>
+			
+		
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+			
+	
+</ul>
+</p>
+<h2 id="appendix-b-notes-i-took">🍥Appendix B: Notes I took</h2>
+
+
+<ul class="blog-posts">
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-12-31' pubdate> 31 Dec, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/5-bugs-in-2019/">5 bugs in 2019</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-12-12' pubdate> 12 Dec, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/react-and-redux/">React and  Redux</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-12-08' pubdate> 08 Dec, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/redux/">Redux</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-11-23' pubdate> 23 Nov, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/react-tic-tac-toe-remaining-features/">React Tic Tac Toe additional features</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-11-02' pubdate> 02 Nov, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/react-tic-tac-toe/">React Tic Tac Toe</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-09-15' pubdate> 15 Sep, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/event-capture-propagation-bubbing-and-once/">Event Capture, Propagation, Bubbling and Once</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-08-28' pubdate> 28 Aug, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/what-is-osi-model/">OSI model</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-08-25' pubdate> 25 Aug, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/reference-vs-copy-in-js/">Reference vs Copy in JS</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-08-04' pubdate> 04 Aug, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/dev-tools-tricks/">Dev tools tricks</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-08-02' pubdate> 02 Aug, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/rest-operator-and-spread-operator/">Rest operator and Spread operator</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-29' pubdate> 29 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/converting-in-javascript/">Converting in JavaScript</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-29' pubdate> 29 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/determining-in-javascript/">Determining? in JavaScript</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-29' pubdate> 29 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/finding-and-filtering-in-javascript/">Finding and Filtering in JavaScript</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-29' pubdate> 29 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/looping-in-javascript/">Looping in JavaScript</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-29' pubdate> 29 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/manipulating-in-javascript/">Manipulating in JavaScript</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-12' pubdate> 12 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/dom-manipulation/">DOM Manipulation</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-11' pubdate> 11 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/react-part1/">React(1/2)</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-07-11' pubdate> 11 Jul, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/react-part2/">React(2/2)</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-06-19' pubdate> 19 Jun, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/bootstrap/">Bootstrap</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-06-19' pubdate> 19 Jun, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/jquery/">jQuery</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-06-18' pubdate> 18 Jun, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/computer-networking-basic/">Computer Networking Basics</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-06-17' pubdate> 17 Jun, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/functional-programming/">Functional Programming</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-06-06' pubdate> 06 Jun, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/regular-expressions/">Regular Expressions</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-05-30' pubdate> 30 May, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/sass/">Sass</a>
+  </li>
+
+<li>
+    <span>
+      <i>
+        <time datetime='2019-05-29' pubdate> 29 May, 2019 </time>
+      </i>
+    </span>
+    <a href="https://mingyong.dev/note-chp1/html-and-css/">HTML and CSS</a>
+  </li>
+
+</ul>
+
+<h2 id="appendix-c-for-memories">🍥Appendix C: For memories</h2>
+<h3 id="my-ugly-jekyll-blog">My ugly Jekyll blog</h3>
+<p>Fancy hamburger menu in version 1:</p>
+<p><img src="/images/2019/jekyll/v1blogHamburger.gif" alt="version 1 hamburger menu"></p>
+<p>Version 2 is cleaner than version 1:</p>
+<p><img src="/images/2019/jekyll/v2blog.gif" alt="version 2"></p>
+<p>Hamburger menu in version 2:</p>
+<p><img src="/images/2019/jekyll/v2blogHamburger.gif" alt="version 2 hamburger menu"></p>
+<p>Version 3 has syntax highlighting and orange as accent colour:</p>
+<p><img src="/images/2019/jekyll/v3blog.gif" alt="version 3"></p>
+<p>I separated notes with posts in version 4. Remove JavaScript and rewrite my CSS with BEM methodology:</p>
+<p><img src="/images/2019/jekyll/v4blog.gif" alt="version 4"></p>
+<p>After that, I cut down some contents.</p>
+<p><img src="/images/2020/v5.gif" alt="version 5"></p>
+<h3 id="chingu">Chingu</h3>
+<p>The certification:</p>
+<p><img src="/images/2019/chingu/chinguCert.PNG" alt="Chingu schedule"></p>
+<p>The schedule:</p>
+<p><img src="/images/2019/chingu/chinguSchedule.PNG" alt="Chingu schedule"></p>
+<h3 id="open-source">&ldquo;open source&rdquo;</h3>
+<p>Hacktoberfest completion:</p>
+<p><img src="/images/2019/opensource/hacktoberfest2019.PNG" alt="Completing Hacktoberfest"></p>
+
+</content>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

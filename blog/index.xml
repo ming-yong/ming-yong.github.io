@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <title>Blogs on (ง •̀_•́)ง Ming and Her Code</title>
     <link>https://mingyong.dev/blog/</link>
-    <description>Recent content in Blogs on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <description>Recent content in Blogs on (ง •̀_•́)ง Ming and Her Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
     <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog post fetcher with React &#43; hitting GraphQL endpoint</title>
-      <link>https://mingyong.dev/blog/matalogue/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://mingyong.dev/blog/matalogue/</guid>
-      <description>This post provides the building blocks (like Lego) to help you build something similar. You can click here to view the code and here for the demo.
-The idea I have been a user of Matters (a mainly Mandarin blogging platform) for a while now. The user home page design fits about three articles.
-This results in an &amp;ldquo;infinite scroll hell&amp;rdquo; homepage for users who has many articles. Their contents will sink to the bottom and never see the sunlight.</description>
-    </item>
-    
-    <item>
-      <title>Form the query you need from a GraphQL API documentation</title>
+      <title>How to read a GraphQL API documentation</title>
       <link>https://mingyong.dev/blog/forming-a-graphql-query/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
@@ -73,16 +62,6 @@ We want to maintain a linear commit history and avoid as many merge conflicts as
 Please note that I am using a Windows keyboard. Other than that, the following shortcuts are not specific to any IDE or editor.
 🏃‍♀️💨 Move the cursor one word at a time  Ctrl + arrow keys to move your cursor one word at a time. Hold down the Shift key to highlight.  Useful for:
  deleting or cutting the whole word (highlight and backspace/Ctrl+X).</description>
-    </item>
-    
-    <item>
-      <title>Years in review: 2018ish to July 2020</title>
-      <link>https://mingyong.dev/blog/review-july-2020/</link>
-      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://mingyong.dev/blog/review-july-2020/</guid>
-      <description>I started learning code and English in 2018 (maybe late 2017ish) to attend community college in Canada in September 2018. My learning journey so far can be divided into two phases: the &amp;ldquo;English and Code gives me headaches&amp;rdquo; phase (phase 1) and the &amp;ldquo;oh I am so lost&amp;rdquo; phase (phase 2). This post is about what I did during those phases and what I think I can improve.
-Phase 1: Learn the basics If my memory serves me right, my first attempt at the first freeCodeCamp project was around January 2018.</description>
     </item>
     
   </channel>

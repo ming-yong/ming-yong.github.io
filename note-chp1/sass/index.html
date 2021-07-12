@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sass | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="Sass" />
+<meta name="description" content="Notes about Sass." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Sass" />
+<meta property="og:description" content="Notes about Sass." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/sass/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-05-30T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-05-30T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sass"/>
+<meta name="twitter:description" content="Notes about Sass."/>
+
+
+
+<meta itemprop="name" content="Sass">
+<meta itemprop="description" content="Notes about Sass."><meta itemprop="datePublished" content="2019-05-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="356">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/">freeCodeCamp &ldquo;Front End Libraries Certification&rdquo;</a></li>
+</ul>
+<h2 id="cover-topics">Cover topics</h2>
+<ul>
+<li><a href="#variable">Variable</a></li>
+<li><a href="#nesting">Nesting</a></li>
+<li><a href="#mixins-reusable-css">Mixins: reusable CSS</a></li>
+<li><a href="#if-else-statement">If-Else statement</a></li>
+<li><a href="#for-loop">For loop</a></li>
+<li><a href="#each-and-map">Each and Map</a></li>
+<li><a href="#while-loop">While loop</a></li>
+<li><a href="#split-code-into-smaller-chunks-with-partials">Split code into smaller chunks with partials</a></li>
+<li><a href="#extend">Extend</a></li>
+</ul>
+<hr>
+<h2 id="variable">Variable</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">$</span><span style="color:#f92672">text-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">red</span><span style="color:#f92672">;</span>
+
+<span style="color:#f92672">h1</span> {
+ <span style="color:#66d9ef">color</span>: <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#66d9ef">text</span><span style="color:#f92672">-</span><span style="color:#66d9ef">color</span>;
+}
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="nesting">Nesting</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">nav</span> {
+ <span style="color:#960050;background-color:#1e0010">ul</span> <span style="color:#960050;background-color:#1e0010">{</span>
+  <span style="color:#960050;background-color:#1e0010">li</span> <span style="color:#960050;background-color:#1e0010">{</span>
+  }
+ <span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#960050;background-color:#1e0010">}</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="mixins-reusable-css">Mixins: reusable CSS</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span><span style="color:#f92672">As</span> <span style="color:#f92672">features</span> <span style="color:#f92672">are</span> <span style="color:#f92672">added</span> <span style="color:#f92672">to</span> <span style="color:#f92672">browsers</span><span style="color:#f92672">,</span> <span style="color:#f92672">CSS</span> <span style="color:#f92672">rules</span> <span style="color:#f92672">using</span> <span style="color:#f92672">them</span> <span style="color:#f92672">may</span> <span style="color:#f92672">need</span> <span style="color:#f92672">vendor</span> <span style="color:#f92672">prefixes</span><span style="color:#f92672">.</span>
+@<span style="color:#66d9ef">mixin</span> <span style="color:#f92672">box-shadow</span><span style="color:#f92672">($</span><span style="color:#f92672">x</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">y</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">blur</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">c</span><span style="color:#f92672">)</span> {
+ <span style="color:#f92672">-webkit-box-shadow</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">x</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">y</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">blur</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">c</span><span style="color:#f92672">;</span>
+ <span style="color:#f92672">-moz-box-shadow</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">x</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">y</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">blur</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">c</span><span style="color:#f92672">;</span>
+ <span style="color:#f92672">-ms-box-shadow</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">x</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">y</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">blur</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">c</span><span style="color:#f92672">;</span>
+ <span style="color:#f92672">box-shadow</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">x</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">y</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">blur</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">c</span><span style="color:#f92672">;</span>
+}
+
+<span style="color:#f92672">div</span> {
+ <span style="color:#960050;background-color:#1e0010">@include</span> <span style="color:#960050;background-color:#1e0010">box-shadow(0px,</span> <span style="color:#960050;background-color:#1e0010">0px,</span> <span style="color:#960050;background-color:#1e0010">4px,</span> <span style="color:#960050;background-color:#1e0010">#fff)</span>;
+}
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="if-else-statement">If-Else statement</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">mixin</span> <span style="color:#f92672">text-effect</span><span style="color:#f92672">($</span><span style="color:#f92672">val</span><span style="color:#f92672">)</span> {
+ @<span style="color:#66d9ef">if</span> <span style="color:#f92672">$</span><span style="color:#f92672">val</span> <span style="color:#f92672">==</span> <span style="color:#f92672">danger</span> {
+  <span style="color:#f92672">color</span><span style="color:#f92672">:</span> <span style="color:#f92672">red</span><span style="color:#f92672">;</span>
+ } @<span style="color:#66d9ef">else</span> <span style="color:#f92672">if</span> <span style="color:#f92672">$</span><span style="color:#f92672">val</span> <span style="color:#f92672">==</span> <span style="color:#f92672">alert</span> {
+  <span style="color:#f92672">color</span><span style="color:#f92672">:</span> <span style="color:#f92672">yellow</span><span style="color:#f92672">;</span>
+ } @<span style="color:#66d9ef">else</span> <span style="color:#f92672">if</span> <span style="color:#f92672">$</span><span style="color:#f92672">val</span> <span style="color:#f92672">==</span> <span style="color:#f92672">success</span> {
+  <span style="color:#f92672">color</span><span style="color:#f92672">:</span> <span style="color:#f92672">green</span><span style="color:#f92672">;</span>
+ } @<span style="color:#66d9ef">else</span> {
+  <span style="color:#f92672">color</span><span style="color:#f92672">:</span> <span style="color:#f92672">black</span><span style="color:#f92672">;</span>
+ }
+}
+
+#box {
+ <span style="color:#960050;background-color:#1e0010">@include</span> <span style="color:#960050;background-color:#1e0010">border-stroke(medium)</span>;
+}
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="for-loop">For loop</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">for</span> <span style="color:#f92672">$</span><span style="color:#f92672">j</span> <span style="color:#f92672">from</span> <span style="color:#f92672">1</span> <span style="color:#f92672">through</span> <span style="color:#f92672">5</span> {
+ .<span style="color:#a6e22e">text-</span><span style="color:#960050;background-color:#1e0010">#</span>{<span style="color:#960050;background-color:#1e0010">$j</span>} {
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#960050;background-color:#1e0010">$</span>j <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+ }
+}
+<span style="color:#f92672">//</span><span style="color:#f92672">can</span> <span style="color:#f92672">be</span> <span style="color:#f92672">from</span> <span style="color:#f92672">1</span> <span style="color:#f92672">through</span> <span style="color:#f92672">5</span> <span style="color:#f92672">or</span> <span style="color:#f92672">from</span> <span style="color:#f92672">1</span> <span style="color:#f92672">to</span> <span style="color:#f92672">6</span>
+<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">#</span>{<span style="color:#960050;background-color:#1e0010">$j</span>} <span style="color:#f92672">is</span> <span style="color:#f92672">the</span> <span style="color:#f92672">number</span> <span style="color:#f92672">plugin</span> <span style="color:#f92672">point</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="each-and-map">Each and Map</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">each</span> <span style="color:#f92672">$</span><span style="color:#f92672">color</span> <span style="color:#f92672">in</span> <span style="color:#f92672">blue</span><span style="color:#f92672">,</span> <span style="color:#f92672">red</span><span style="color:#f92672">,</span> <span style="color:#f92672">green</span> {
+ <span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">#</span>{<span style="color:#960050;background-color:#1e0010">$color</span>}<span style="color:#f92672">-text</span> {
+  <span style="color:#66d9ef">color</span>: <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#66d9ef">color</span>;
+ }
+}
+
+<span style="color:#f92672">$</span><span style="color:#f92672">colors</span><span style="color:#f92672">:</span> <span style="color:#f92672">(</span>
+ <span style="color:#f92672">color1</span><span style="color:#f92672">:</span> <span style="color:#f92672">blue</span><span style="color:#f92672">,</span>
+ <span style="color:#f92672">color2</span><span style="color:#f92672">:</span> <span style="color:#f92672">red</span><span style="color:#f92672">,</span>
+ <span style="color:#f92672">color3</span><span style="color:#f92672">:</span> <span style="color:#f92672">green</span>
+<span style="color:#f92672">);</span>
+
+@<span style="color:#66d9ef">each</span> <span style="color:#f92672">$</span><span style="color:#f92672">key</span><span style="color:#f92672">,</span> <span style="color:#f92672">$</span><span style="color:#f92672">color</span> <span style="color:#f92672">in</span> <span style="color:#f92672">$</span><span style="color:#f92672">colors</span> {
+ <span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">#</span>{<span style="color:#960050;background-color:#1e0010">$color</span>}<span style="color:#f92672">-text</span> {
+  <span style="color:#66d9ef">color</span>: <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#66d9ef">color</span>;
+ }
+}
+
+.<span style="color:#a6e22e">blue-text</span> {
+ <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">blue</span>;
+}
+
+.<span style="color:#a6e22e">red-text</span> {
+ <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
+}
+
+.<span style="color:#a6e22e">green-text</span> {
+ <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">green</span>;
+}
+<span style="color:#f92672">//</span><span style="color:#f92672">both</span> <span style="color:#f92672">output</span> <span style="color:#f92672">the</span> <span style="color:#f92672">same</span> <span style="color:#f92672">thing</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="while-loop">While loop</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">$</span><span style="color:#f92672">x</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span>
+@<span style="color:#66d9ef">while</span> <span style="color:#f92672">$</span><span style="color:#f92672">x</span> <span style="color:#f92672">&lt;</span> <span style="color:#f92672">13</span> {
+ .<span style="color:#a6e22e">col-</span><span style="color:#960050;background-color:#1e0010">#</span>{<span style="color:#960050;background-color:#1e0010">$x</span>} {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span><span style="color:#f92672">/</span><span style="color:#ae81ff">12</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">$</span>x;
+ }
+ <span style="color:#f92672">$</span><span style="color:#f92672">x</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">x</span> <span style="color:#f92672">+</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span>
+}
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="split-code-into-smaller-chunks-with-partials">Split code into smaller chunks with partials</h2>
+<p>Name of the partials should start with a underscore(_), which tells Sass it is a small segment of CSS and not to convert it into CSS file. Also, Sass files end with the .scss file extension.</p>
+<p>To Bring in file _mixins.scss:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span><span style="color:#f92672">In</span> <span style="color:#f92672">the</span> <span style="color:#f92672">main</span>.<span style="color:#a6e22e">scss</span> <span style="color:#f92672">file</span>
+@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;mixins&#34;</span>;
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="extend">Extend</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">panel</span> {
+ <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">red</span>;
+ <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">70</span><span style="color:#66d9ef">px</span>;
+ <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">green</span>;
+}
+
+.<span style="color:#a6e22e">big-panel</span> {
+ <span style="color:#960050;background-color:#1e0010">@extend</span> <span style="color:#960050;background-color:#1e0010">.panel</span>;
+ <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+ <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+}
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

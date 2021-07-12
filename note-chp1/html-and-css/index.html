@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML and CSS | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="HTML and CSS" />
+<meta name="description" content="Notes about HTML and CSS." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="HTML and CSS" />
+<meta property="og:description" content="Notes about HTML and CSS." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/html-and-css/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-05-29T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-05-29T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML and CSS"/>
+<meta name="twitter:description" content="Notes about HTML and CSS."/>
+
+
+
+<meta itemprop="name" content="HTML and CSS">
+<meta itemprop="description" content="Notes about HTML and CSS."><meta itemprop="datePublished" content="2019-05-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="793">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/">freeCodeCamp &ldquo;Responsive Web Design Certification&rdquo;</a></li>
+</ul>
+<h2 id="cover-topics">Cover topics</h2>
+<ul>
+<li><a href="#applied-visual-design">Applied Visual Design</a></li>
+<li><a href="#applied-accessibility">Applied Accessibility</a></li>
+<li><a href="#responsive-web-design-principles">Responsive Web Design Principles</a></li>
+<li><a href="#css-flexbox">CSS Flexbox</a></li>
+<li><a href="#css-grid">CSS Grid</a></li>
+</ul>
+<h3 id="applied-visual-design">Applied Visual Design</h3>
+<p>CSS:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*box-shadow*/</span>
+<span style="color:#f92672">box-shadow</span><span style="color:#f92672">:</span> <span style="color:#f92672">0</span> <span style="color:#f92672">10px</span> <span style="color:#f92672">20px</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">0</span><span style="color:#f92672">,</span><span style="color:#f92672">0</span><span style="color:#f92672">,</span><span style="color:#f92672">0</span><span style="color:#f92672">,</span><span style="color:#f92672">0</span>.<span style="color:#a6e22e">19</span><span style="color:#f92672">),</span> <span style="color:#f92672">0</span> <span style="color:#f92672">6px</span> <span style="color:#f92672">6px</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">0</span><span style="color:#f92672">,</span><span style="color:#f92672">0</span><span style="color:#f92672">,</span><span style="color:#f92672">0</span><span style="color:#f92672">,</span><span style="color:#f92672">0</span>.<span style="color:#a6e22e">23</span><span style="color:#f92672">);</span>
+<span style="color:#75715e">/*offset-x(how far to push the shadow horizontally from the element)*/</span>
+<span style="color:#75715e">/*offset-y(how far to push the shadow vertically from the element)*/</span>
+<span style="color:#75715e">/*blur-radius(optional), spread radius (optional), color value*/</span>
+
+<span style="color:#75715e">/*text transform property*/</span>
+<span style="color:#f92672">text-transform</span><span style="color:#f92672">:</span> <span style="color:#f92672">lowercase</span><span style="color:#f92672">;</span>
+<span style="color:#75715e">/*uppercase, capitalize, initial(default), inherit, none*/</span>
+
+<span style="color:#75715e">/*line-height*/</span>
+<span style="color:#f92672">line-height</span>:<span style="color:#a6e22e">25px</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/*relative position and offset*/</span>
+<span style="color:#f92672">p</span>{
+  <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">relative</span>;
+  <span style="color:#66d9ef">bottom</span>:<span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+}
+
+<span style="color:#75715e">/*HSL*/</span>
+<span style="color:#f92672">Hue</span><span style="color:#f92672">(</span><span style="color:#f92672">color</span> <span style="color:#f92672">spectrum</span><span style="color:#f92672">)</span> <span style="color:#f92672">Saturation</span><span style="color:#f92672">(</span><span style="color:#f92672">grey</span> <span style="color:#f92672">amount</span><span style="color:#f92672">)</span> <span style="color:#f92672">Lightness</span><span style="color:#f92672">(</span><span style="color:#f92672">0-360</span><span style="color:#f92672">,</span> <span style="color:#f92672">100</span><span style="color:#f92672">%,</span> <span style="color:#f92672">100</span><span style="color:#f92672">%);</span><span style="color:#75715e">/*adjust color tone*/</span>
+
+<span style="color:#75715e">/*linear gradient*/</span>
+<span style="color:#f92672">background</span><span style="color:#f92672">:</span> <span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">gradient_direction</span><span style="color:#f92672">,</span> <span style="color:#f92672">color1</span><span style="color:#f92672">,</span> <span style="color:#f92672">color2</span><span style="color:#f92672">,</span> <span style="color:#f92672">color3</span><span style="color:#f92672">,</span> <span style="color:#f92672">...);</span>
+<span style="color:#f92672">background</span><span style="color:#f92672">:</span> <span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">90deg</span><span style="color:#f92672">,</span> <span style="color:#f92672">red</span><span style="color:#f92672">,</span> <span style="color:#f92672">yellow</span><span style="color:#f92672">,</span> <span style="color:#f92672">rgb</span><span style="color:#f92672">(</span><span style="color:#f92672">204</span><span style="color:#f92672">,</span> <span style="color:#f92672">204</span><span style="color:#f92672">,</span> <span style="color:#f92672">255</span><span style="color:#f92672">));</span>
+<span style="color:#75715e">/*striped*/</span>
+<span style="color:#f92672">background</span><span style="color:#f92672">:</span> <span style="color:#f92672">repeating</span> <span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span>
+  <span style="color:#f92672">90deg</span><span style="color:#f92672">,</span>
+  <span style="color:#f92672">yellow</span> <span style="color:#f92672">0px</span><span style="color:#f92672">,</span>
+  <span style="color:#f92672">blue</span> <span style="color:#f92672">40px</span><span style="color:#f92672">,</span>
+  <span style="color:#f92672">green</span> <span style="color:#f92672">40px</span><span style="color:#f92672">,</span>
+  <span style="color:#f92672">red</span> <span style="color:#f92672">80px</span>
+<span style="color:#f92672">);</span>
+
+<span style="color:#75715e">/*size and skew*/</span>
+  <span style="color:#f92672">transform</span><span style="color:#f92672">:</span> <span style="color:#f92672">scale</span><span style="color:#f92672">(</span><span style="color:#f92672">2</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">transform</span><span style="color:#f92672">:</span> <span style="color:#f92672">skewX</span><span style="color:#f92672">(</span><span style="color:#f92672">-32deg</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">transform</span><span style="color:#f92672">:</span> <span style="color:#f92672">skewY</span><span style="color:#f92672">(</span><span style="color:#f92672">-32deg</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">/*animation*/</span>
+#anim {
+  <span style="color:#66d9ef">animation-name</span>: colorful;
+  <span style="color:#66d9ef">animation-duration</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span>;
+  <span style="color:#66d9ef">animation-fill-mode</span>:<span style="color:#66d9ef">forwards</span>;
+  <span style="color:#66d9ef">animation-iteration-count</span>:<span style="color:#66d9ef">infinite</span>;
+  <span style="color:#66d9ef">animation-timing-function</span>:<span style="color:#66d9ef">linear</span>;<span style="color:#75715e">/*ease-out*/</span>
+  <span style="color:#66d9ef">animation-timing-function</span>: cubic-bezier(<span style="color:#ae81ff">0.311</span>, <span style="color:#ae81ff">0.441</span>, <span style="color:#ae81ff">0.444</span>, <span style="color:#ae81ff">1.649</span>);<span style="color:#75715e">/*x1,y1,x2,y2*/</span>
+}
+
+@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">colorful</span> {
+  <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">blue</span>;
+  }
+  <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">yellow</span>;
+  }
+}
+
+@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">bounce</span>{
+
+  <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+
+    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+
+  }
+
+  <span style="color:#f92672">50</span><span style="color:#f92672">%</span> {
+
+    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">249</span><span style="color:#66d9ef">px</span>;
+
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">130</span><span style="color:#66d9ef">px</span>;
+
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">70</span><span style="color:#66d9ef">px</span>;
+
+  }
+
+  <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+
+    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+
+  }
+
+}
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h3 id="applied-accessibility">Applied Accessibility</h3>
+<p>HTML:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">--text</span> <span style="color:#a6e22e">alternative--</span>&gt;
+alt=&#34;description&#34;
+<span style="color:#75715e">&lt;!--when image is already being described by caption, alt should be left blank--&gt;</span>
+
+<span style="color:#75715e">&lt;!--use h1-6 to show hierarchical relationships of content--&gt;</span>
+
+<span style="color:#75715e">&lt;!--landmark(semantic)--&gt;</span>
+&lt;<span style="color:#f92672">main</span>&gt;
+&lt;<span style="color:#f92672">header</span>&gt;
+&lt;<span style="color:#f92672">footer</span>&gt;
+&lt;<span style="color:#f92672">nav</span>&gt;
+&lt;<span style="color:#f92672">article</span>&gt;<span style="color:#75715e">&lt;!--group independent, self-contained content--&gt;</span>
+&lt;<span style="color:#f92672">section</span>&gt;<span style="color:#75715e">&lt;!--group related content--&gt;</span>
+
+<span style="color:#75715e">&lt;!--improve accessibility of audio content--&gt;</span>
+&lt;<span style="color:#f92672">audio</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;meowClip&#34;</span> <span style="color:#a6e22e">controls</span>&gt;
+  &lt;<span style="color:#f92672">source</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;audio/meow.mp3&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;audio/mpeg&#34;</span> /&gt;
+  &lt;<span style="color:#f92672">source</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;audio/meow.ogg&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;audio/ogg&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">audio</span>&gt;
+
+<span style="color:#75715e">&lt;!--improve chart accessibility--&gt;</span>
+&lt;<span style="color:#f92672">figure</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;roundhouseDestruction.jpeg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;photo of camper cat executing a roundhouse kick&#34;</span>&gt;
+  &lt;<span style="color:#f92672">br</span>&gt;
+  &lt;<span style="color:#f92672">figcaption</span>&gt;
+    Master camper cat demonstrates proper form of a roundhouse kick.
+  &lt;/<span style="color:#f92672">figcaption</span>&gt;
+&lt;/<span style="color:#f92672">figure</span>&gt;
+
+<span style="color:#75715e">&lt;!--form accessibility--&gt;</span>
+&lt;<span style="color:#f92672">form</span>&gt;
+  <span style="color:#75715e">&lt;!--label--&gt;</span>
+  &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span>&gt;Name:&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span>&gt;
+
+  <span style="color:#75715e">&lt;!--radio button--&gt;</span>
+  &lt;<span style="color:#f92672">fieldset</span>&gt;
+    &lt;<span style="color:#f92672">legend</span>&gt;Choose one of these three items:&lt;/<span style="color:#f92672">legend</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;items&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span>&gt;Choice One&lt;/<span style="color:#f92672">label</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;two&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;items&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;two&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;two&#34;</span>&gt;Choice Two&lt;/<span style="color:#f92672">label</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;three&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;items&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;three&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;three&#34;</span>&gt;Choice Three&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;/<span style="color:#f92672">fieldset</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+
+<span style="color:#75715e">&lt;!--accessible date picker--&gt;</span>
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input1&gt;Enter a date:&lt;/label&gt;
+</span><span style="color:#e6db74">&lt;input type=&#34;</span><span style="color:#a6e22e">date</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input1&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input1&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!--standardize times--&gt;</span>
+&lt;<span style="color:#f92672">time</span> <span style="color:#a6e22e">datetime</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2019-04-02&#34;</span>&gt;Tuesday&lt;/<span style="color:#f92672">time</span>&gt;
+</code></pre></div><p>CSS:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*make element only visible for screen reader*/</span>
+.<span style="color:#a6e22e">sr-only</span>{
+  <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">absolute</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">-10000</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">top</span>:<span style="color:#66d9ef">auto</span>;
+  <span style="color:#66d9ef">overflow</span>:<span style="color:#66d9ef">hidden</span>;
+}
+<span style="color:#75715e">/*display: none; or visibility:hidden; hides content for everyone, including screen reader users*/</span>
+<span style="color:#75715e">/*zero values for pixel sizes, such as width:0px; and height:0px;*/</span>
+<span style="color:#75715e">/*removes the element from the flow of your document,*/</span>
+<span style="color:#75715e">/*meaning screen reader will ignore it*/</span>
+
+<span style="color:#75715e">/*high contrast text*/</span>
+
+<span style="color:#75715e">/*avoid colorblindness*/</span>
+
+<span style="color:#75715e">/*uses descriptive link text to gives links meaning*/</span>
+
+<span style="color:#75715e">/*makes links navigable with accesskey*/</span>
+<span style="color:#f92672">&lt;</span><span style="color:#f92672">button</span> <span style="color:#f92672">accesskey</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">important</span> <span style="color:#f92672">button</span><span style="color:#f92672">&lt;/</span><span style="color:#f92672">button</span><span style="color:#f92672">&gt;</span>
+
+<span style="color:#75715e">/*use tabindex to add keyboard focus to an element*/</span>
+<span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">I</span> <span style="color:#f92672">need</span> <span style="color:#f92672">keyboard</span> <span style="color:#f92672">focus</span> <span style="color:#f92672">!!&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;</span>
+<span style="color:#75715e">/* 1 will be first, default 0 will be last*/</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h3 id="responsive-web-design-principles">Responsive Web Design Principles</h3>
+<p>CSS:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*media query*/</span>
+
+<span style="color:#75715e">/*responsive image*/</span>
+<span style="color:#f92672">img</span> {
+ <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+ <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+ <span style="color:#66d9ef">height</span>: <span style="color:#66d9ef">auto</span>;
+}
+
+<span style="color:#75715e">/*higher resolution image display*/</span>
+<span style="color:#75715e">/*set the height and width to 50% of its original values*/</span>
+
+<span style="color:#75715e">/*responsive typography (viewport units)*/</span>
+<span style="color:#f92672">-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">10vw</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span><span style="color:#f92672">10</span><span style="color:#f92672">%</span> <span style="color:#f92672">of</span> <span style="color:#f92672">the</span> <span style="color:#f92672">viewpoint</span><span style="color:#e6db74">&#39;s width
+</span><span style="color:#e6db74">-height: 3vh; //3% of the viewpoint&#39;</span><span style="color:#f92672">s</span> <span style="color:#f92672">height</span>
+<span style="color:#f92672">-height</span><span style="color:#f92672">:</span> <span style="color:#f92672">70vmin</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span><span style="color:#f92672">70</span><span style="color:#f92672">%</span> <span style="color:#f92672">of</span> <span style="color:#f92672">the</span> <span style="color:#f92672">viewport</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">s</span> <span style="color:#f92672">smaller</span> <span style="color:#f92672">dimension</span><span style="color:#f92672">(</span><span style="color:#f92672">height</span> <span style="color:#f92672">vs</span> <span style="color:#f92672">width</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">100vmax</span><span style="color:#f92672">;</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h3 id="css-flexbox">CSS Flexbox</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*to start:*/</span>
+<span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/*reverse row:*/</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row-reverse</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/*reating rows and columns:*/</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">column</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/*align elements:*/</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*flex-start,flex-end,space-between,space-around*/</span>
+<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*flex-start,flex-end,stretch,baseline*/</span>
+
+<span style="color:#75715e">/*wrapping*/</span>
+<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*no-wrap(default),wrap-reverse*/</span>
+
+<span style="color:#75715e">/*shrink/expands items and initial size*/</span>
+<span style="color:#f92672">flex-shrink</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*the higher the number is, the more it shrinks*/</span>
+<span style="color:#f92672">flex-grow</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">flex-basis</span><span style="color:#f92672">:</span> <span style="color:#f92672">10em</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*auto*/</span>
+<span style="color:#f92672">flex</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span> <span style="color:#f92672">2</span> <span style="color:#f92672">150px</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*1*/</span>
+<span style="color:#f92672">flex</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span> <span style="color:#f92672">1</span> <span style="color:#f92672">150px</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*2*/</span>
+<span style="color:#75715e">/*grow shrink basis, when container is &gt;300px, 1 will expand at twice at the rate of 2, vice versa*/</span>
+
+<span style="color:#75715e">/*rearrange elements*/</span>
+<span style="color:#f92672">order</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*the number of its sequence*/</span>
+
+<span style="color:#75715e">/*adjust items individually*/</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*accept same values as align-items and will override it*/</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h3 id="css-grid">CSS Grid</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*to start:*/</span>
+<span style="color:#f92672">display</span>:<span style="color:#a6e22e">grid</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/*adding columns and rows:*/</span>
+<span style="color:#f92672">grid-template-columns</span><span style="color:#f92672">:</span> <span style="color:#f92672">100px</span> <span style="color:#f92672">100px</span> <span style="color:#f92672">100px</span><span style="color:#f92672">;</span><span style="color:#75715e">/*3 100px columns*/</span>
+<span style="color:#f92672">grid-template-rows</span><span style="color:#f92672">:</span> <span style="color:#f92672">50px</span> <span style="color:#f92672">50px</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-template-columns</span>:<span style="color:#a6e22e">auto</span> <span style="color:#f92672">50px</span> <span style="color:#f92672">10</span><span style="color:#f92672">%</span> <span style="color:#f92672">2fr</span> <span style="color:#f92672">1fr</span><span style="color:#f92672">;</span><span style="color:#75715e">/*as wide as the content, 50 px, 10% of the grid, 2/3 and 1/3 wide*/</span>
+
+<span style="color:#75715e">/*adding gaps:*/</span>
+<span style="color:#f92672">grid-column-gap</span>:<span style="color:#a6e22e">10px</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-row-gap</span>:<span style="color:#a6e22e">5px</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-gap</span>:<span style="color:#a6e22e">10px</span> <span style="color:#f92672">20px</span><span style="color:#f92672">;</span><span style="color:#75715e">/*one value allpies to both, two applies to row then column*/</span>
+
+<span style="color:#75715e">/*controlling spacing:*/</span>
+<span style="color:#f92672">grid-column</span>:<span style="color:#a6e22e">1</span><span style="color:#f92672">/</span><span style="color:#f92672">3</span><span style="color:#f92672">;</span> <span style="color:#f92672">item</span> <span style="color:#f92672">took</span> <span style="color:#f92672">space</span> <span style="color:#f92672">from</span> <span style="color:#f92672">first</span> <span style="color:#f92672">to</span> <span style="color:#f92672">third</span> <span style="color:#f92672">vertical</span> <span style="color:#f92672">line</span><span style="color:#f92672">,</span> <span style="color:#f92672">consuming</span> <span style="color:#f92672">two</span> <span style="color:#f92672">columns</span>
+<span style="color:#f92672">grid-row</span>:<span style="color:#a6e22e">2</span><span style="color:#f92672">/</span><span style="color:#f92672">4</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/*aligning items:*/</span>
+<span style="color:#f92672">justify-self</span>:<span style="color:#a6e22e">center</span><span style="color:#f92672">;</span><span style="color:#75715e">/*horizontally,start,end,center*/</span>
+<span style="color:#f92672">align-self</span>:<span style="color:#a6e22e">end</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">align-items</span>:<span style="color:#a6e22e">center</span><span style="color:#f92672">;</span><span style="color:#75715e">/*align all vertically*/</span>
+<span style="color:#f92672">justify-items</span>:<span style="color:#a6e22e">start</span><span style="color:#f92672">;</span><span style="color:#75715e">/*applies to both*/</span>
+
+<span style="color:#75715e">/*grouping cells into area*/</span>
+<span style="color:#f92672">grid-template-areas</span><span style="color:#f92672">:</span>
+  <span style="color:#e6db74">&#34;header header header&#34;</span>
+  <span style="color:#e6db74">&#34;content content&#34;</span><span style="color:#75715e">/*two cells into content and one designated as empty cell*/</span>
+  <span style="color:#e6db74">&#34;footer footer footer&#34;</span>
+<span style="color:#f92672">grid-area</span>:<span style="color:#a6e22e">footer</span><span style="color:#f92672">;</span><span style="color:#75715e">/*placing items in grid areas*/</span>
+<span style="color:#f92672">grid-area</span>:<span style="color:#a6e22e">3</span><span style="color:#f92672">/</span><span style="color:#f92672">1</span><span style="color:#f92672">/</span><span style="color:#f92672">4</span><span style="color:#f92672">/</span><span style="color:#f92672">4</span><span style="color:#f92672">;</span><span style="color:#75715e">/*horizontal/vertical line to start at and horizontal/vertical line to end at*/</span>
+
+<span style="color:#75715e">/*repeat function*/</span>
+<span style="color:#f92672">grid-template-rows</span>:<span style="color:#a6e22e">repeat</span><span style="color:#f92672">(</span><span style="color:#f92672">100</span><span style="color:#f92672">,</span><span style="color:#f92672">50px</span><span style="color:#f92672">);</span><span style="color:#75715e">/*100 50px rows*/</span>
+<span style="color:#f92672">grid-template-columns</span>:<span style="color:#a6e22e">repeat</span><span style="color:#f92672">(</span><span style="color:#f92672">2</span><span style="color:#f92672">,</span><span style="color:#f92672">1fr</span> <span style="color:#f92672">50px</span><span style="color:#f92672">)</span> <span style="color:#f92672">20px</span><span style="color:#f92672">;</span><span style="color:#75715e">/*1fr 50px 1fr 50px 20px*/</span>
+
+<span style="color:#75715e">/*minmax function*/</span>
+<span style="color:#f92672">grid-template-columns</span>:<span style="color:#a6e22e">100px</span> <span style="color:#f92672">minmax</span><span style="color:#f92672">(</span><span style="color:#f92672">50px</span><span style="color:#f92672">,</span> <span style="color:#f92672">200px</span><span style="color:#f92672">);</span><span style="color:#75715e">/*100px column and a column wide min50px max200px*/</span>
+<span style="color:#f92672">repeat</span><span style="color:#f92672">(</span><span style="color:#f92672">auto-fill</span><span style="color:#f92672">,</span><span style="color:#f92672">minmax</span><span style="color:#f92672">(</span><span style="color:#f92672">60px</span> <span style="color:#f92672">1fr</span><span style="color:#f92672">));</span><span style="color:#75715e">/*moves your items when resizing, insert 60px blank cells*/</span>
+                                  <span style="color:#75715e">/*if container is too big*/</span>
+<span style="color:#f92672">repeat</span><span style="color:#f92672">(</span><span style="color:#f92672">auto-fit</span><span style="color:#f92672">,</span><span style="color:#f92672">minmax</span><span style="color:#f92672">(</span><span style="color:#f92672">60px</span><span style="color:#f92672">,</span><span style="color:#f92672">1fr</span><span style="color:#f92672">));</span><span style="color:#75715e">/*stretches each cells to fit the whole container*/</span>
+
+<span style="color:#75715e">/*responsive layout on different viewpoint*/</span>
+@<span style="color:#66d9ef">media</span><span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">300px</span><span style="color:#f92672">)</span>{}
+@<span style="color:#66d9ef">media</span><span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">400px</span><span style="color:#f92672">)</span>{}
+
+<span style="color:#75715e">/*creating grids within grids*/</span>
+<span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">grid</span><span style="color:#f92672">;</span> <span style="color:#f92672">and</span> <span style="color:#f92672">grid-template-columns</span><span style="color:#f92672">:</span> <span style="color:#f92672">auto</span> <span style="color:#f92672">1fr</span><span style="color:#f92672">;</span><span style="color:#75715e">/*inside one of the items*/</span>
+</code></pre></div><p><a href="#cover-topics">back to top</a></p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Journey on (ง •̀_•́)ง Ming and Her Code</title>
+    <link>https://mingyong.dev/journey/</link>
+    <description>Recent content in Journey on (ง •̀_•́)ง Ming and Her Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/journey/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From zero to a blog</title>
+      <link>https://mingyong.dev/journey/chapter1/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/journey/chapter1/</guid>
+      <description>Content  Summary Appendix A: Projects I built Appendix B: Notes I took Appendix C: For memories  Summary    Timeline What I did     Before Zero coding experience and barely use English in my daily life.   2018 Started learning HTML and CSS on freeCodeCamp and completed the Responsive Web Design course.    Took JavaScript30, a free course by WesBos, after completing JavaScript Algorithms and Data Structures on freeCodeCamp.</description>
+    </item>
+    
+  </channel>
+</rss>

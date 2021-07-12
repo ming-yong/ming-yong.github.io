@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Redux | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="Redux" />
+<meta name="description" content="Learning notes about Redux." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Redux" />
+<meta property="og:description" content="Learning notes about Redux." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/redux/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-12-08T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-08T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redux"/>
+<meta name="twitter:description" content="Learning notes about Redux."/>
+
+
+
+<meta itemprop="name" content="Redux">
+<meta itemprop="description" content="Learning notes about Redux."><meta itemprop="datePublished" content="2019-12-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="761">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/">freeCodeCamp &ldquo;Front End Libraries Certification&rdquo;</a></li>
+</ul>
+<h2 id="all-together-practice">All together practice</h2>
+<h3 id="redux-counter">Redux Counter</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">INCREMENT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;INCREMENT&#34;</span>; <span style="color:#75715e">// define a constant for increment action types
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DECREMENT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DECREMENT&#34;</span>; <span style="color:#75715e">// define a constant for decrement action types
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// define the counter reducer which will increment or decrement the state based on the action it receives
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">counterReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">action</span>)=&gt;{
+    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>){
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">INCREMENT</span><span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">DECREMENT</span><span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span><span style="color:#f92672">-=</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+    }
+};
+
+<span style="color:#75715e">// define an action creator for incrementing
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">incAction</span> <span style="color:#f92672">=</span> ()=&gt;{
+    <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#a6e22e">INCREMENT</span>};
+};
+
+<span style="color:#75715e">// define an action creator for decrementing
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">decAction</span> <span style="color:#f92672">=</span> ()=&gt;{
+<span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#a6e22e">DECREMENT</span>};
+};
+
+<span style="color:#75715e">// define the Redux store here, passing in your reducers
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(
+    <span style="color:#a6e22e">counterReducer</span>
+);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());<span style="color:#75715e">//0
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">incAction</span>());
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());<span style="color:#75715e">//1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">decAction</span>());
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());<span style="color:#75715e">//0
+</span></code></pre></div><h3 id="todo-list">ToDo list</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_TO_DO</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_TO_DO&#39;</span>;
+
+<span style="color:#75715e">// A list of strings representing tasks to do:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">todos</span> <span style="color:#f92672">=</span> [
+  <span style="color:#e6db74">&#39;Go to the store&#39;</span>,
+  <span style="color:#e6db74">&#39;Clean the house&#39;</span>,
+  <span style="color:#e6db74">&#39;Cook dinner&#39;</span>,
+  <span style="color:#e6db74">&#39;Learn to code&#39;</span>,
+];
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">immutableReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">todos</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ADD_TO_DO</span><span style="color:#f92672">:</span>
+      <span style="color:#75715e">// don&#39;t mutate state here or the tests will fail
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">todo</span>]
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+
+<span style="color:#75715e">// an example todo argument would be &#39;Learn React&#39;,
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addToDo</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">todo</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ADD_TO_DO</span>,
+    <span style="color:#a6e22e">todo</span>
+  }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">immutableReducer</span>);
+</code></pre></div><h2 id="redux">Redux</h2>
+<p>Redux is a state management framework/predictable state container for JavaScript apps, that can be used with a number of different web technologies including React. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//redux store: the Redux store is the single source of truth when it comes to application state.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+}
+<span style="color:#75715e">//create a store
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">reducer</span>);
+
+<span style="color:#75715e">//get state from the store
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(
+  (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>) =&gt; <span style="color:#a6e22e">state</span>
+);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">currentState</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>();
+
+<span style="color:#75715e">//define a Redux Action
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;LOGIN&#34;</span>
+};
+
+<span style="color:#75715e">//define an action creator
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">action</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;LOGIN&#39;</span>
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">actionCreator</span>(){
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>;
+}
+
+<span style="color:#75715e">//dispatch an action event
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">actionCreator</span>());
+<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({ <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;LOGIN&#39;</span> });
+
+<span style="color:#75715e">//reducer function: respond to the action after it&#39;s been created and dispatched
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultState</span>, <span style="color:#a6e22e">action</span>) =&gt; {<span style="color:#75715e">//take state and action as arguments
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span><span style="color:#f92672">===</span><span style="color:#e6db74">&#34;LOGIN&#34;</span><span style="color:#f92672">?</span>{<span style="color:#a6e22e">login</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>}<span style="color:#f92672">:</span><span style="color:#a6e22e">state</span>;<span style="color:#75715e">//always return a new copy of the state(state is read-only)
+</span><span style="color:#75715e"></span>};
+
+
+<span style="color:#75715e">//use const for action type
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LOGIN</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LOGIN&#34;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LOGOUT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LOGOUT&#34;</span>;
+
+<span style="color:#75715e">//use a switch statement to handle multiple actions
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">authReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultState</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">LOGIN</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">authenticated</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+      }
+
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">LOGOUT</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">authenticated</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+      }
+
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loginUser</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">LOGIN</span>
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logoutUser</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">LOGOUT</span>
+  }
+};
+
+<span style="color:#75715e">//register a store listener(store.subscribe()): another method that access Redux store
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ADD</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">reducer</span>);
+<span style="color:#75715e">// global count variable:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">subscribe</span>(()=&gt;{
+  <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+})
+<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ADD</span>});
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">count</span>);<span style="color:#75715e">//1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ADD</span>});
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">count</span>);<span style="color:#75715e">//2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ADD</span>});
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">count</span>);<span style="color:#75715e">//3
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//combine multiple reducer: Redux.combineReducers()
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rootReducer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">combineReducers</span>({<span style="color:#75715e">//example of a note-taking app with authentication
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">auth</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">authenticationReducer</span>,
+  <span style="color:#a6e22e">notes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">notesReducer</span>
+});
+
+<span style="color:#75715e">//send action data to the store
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_NOTE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_NOTE&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">notesReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Initial State&#39;</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ADD_NOTE</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">text</span>
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addNoteText</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">note</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#a6e22e">ADD_NOTE</span>,
+    <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span><span style="color:#a6e22e">note</span>
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">notesReducer</span>);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());<span style="color:#75715e">//initial state
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addNoteText</span>(<span style="color:#e6db74">&#39;Hello!&#39;</span>));
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());<span style="color:#75715e">//hello
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//Redux Thunk middleware: handle asynchronous actions
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REQUESTING_DATA</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REQUESTING_DATA&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">RECEIVED_DATA</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;RECEIVED_DATA&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">requestingData</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">REQUESTING_DATA</span>} }
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">receivedData</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">data</span>) =&gt; { <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">RECEIVED_DATA</span>, <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">users</span>} }
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleAsync</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">dispatch</span>) {
+    <span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">requestingData</span>());
+    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Jeff&#39;</span>, <span style="color:#e6db74">&#39;William&#39;</span>, <span style="color:#e6db74">&#39;Alice&#39;</span>]
+      }
+    <span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">receivedData</span>(<span style="color:#a6e22e">data</span>));
+    }, <span style="color:#ae81ff">2500</span>);
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">defaultState</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">fetching</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+  <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> []
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">asyncDataReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultState</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">REQUESTING_DATA</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">fetching</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> []
+      }
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">RECEIVED_DATA</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">fetching</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">users</span>
+      }
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(
+  <span style="color:#a6e22e">asyncDataReducer</span>,
+  <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">applyMiddleware</span>(<span style="color:#a6e22e">ReduxThunk</span>.<span style="color:#66d9ef">default</span>)
+);
+
+<span style="color:#75715e">//copy object
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">defaultState</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CamperBot&#39;</span>,
+  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;offline&#39;</span>,
+  <span style="color:#a6e22e">friends</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;732,982&#39;</span>,
+  <span style="color:#a6e22e">community</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;freeCodeCamp&#39;</span>
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">immutableReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultState</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ONLINE&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#75715e">// don&#39;t mutate state here or the tests will fail
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>({},<span style="color:#a6e22e">state</span>,{<span style="color:#a6e22e">status</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;online&#34;</span>})
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wakeUp</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ONLINE&#39;</span>
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Redux</span>.<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">immutableReducer</span>);
+</code></pre></div>
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

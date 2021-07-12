@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on (ง •̀_•́)ง Ming and Her Code</title>
+    <link>https://mingyong.dev/projects/</link>
+    <description>Recent content in Projects on (ง •̀_•́)ง Ming and Her Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buried Content on User Homepage</title>
+      <link>https://mingyong.dev/projects/matalogue/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/projects/matalogue/</guid>
+      <description>Highlights  Reduce time to collect blog post links from hours to seconds. Received 10+ donations and 400+ endorsements.  The problem The user homepage design on Matters (a Chinese blogging platform) fits about three articles. Users&#39; content gets buried in almost no time.
+Some users started to create posts that act as content pages. However, collecting blog posts by hand requires a lot of time and energy.
+The solution A blog post fetcher to fetch, edit, and copy links to users&#39; posts in seconds.</description>
+    </item>
+    
+  </channel>
+</rss>

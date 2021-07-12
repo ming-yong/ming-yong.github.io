@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>React on (ง •̀_•́)ง Ming&#39;s blog</title>
+    <title>React on (ง •̀_•́)ง Ming and Her Code</title>
     <link>https://mingyong.dev/tags/react/</link>
-    <description>Recent content in React on (ง •̀_•́)ง Ming&#39;s blog</description>
+    <description>Recent content in React on (ง •̀_•́)ง Ming and Her Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
     <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog post fetcher with React &#43; hitting GraphQL endpoint</title>
-      <link>https://mingyong.dev/blog/matalogue/</link>
+      <title>Buried Content on User Homepage</title>
+      <link>https://mingyong.dev/projects/matalogue/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://mingyong.dev/blog/matalogue/</guid>
-      <description>This post provides the building blocks (like Lego) to help you build something similar. You can click here to view the code and here for the demo.
-The idea I have been a user of Matters (a mainly Mandarin blogging platform) for a while now. The user home page design fits about three articles.
-This results in an &amp;ldquo;infinite scroll hell&amp;rdquo; homepage for users who has many articles. Their contents will sink to the bottom and never see the sunlight.</description>
+      <guid>https://mingyong.dev/projects/matalogue/</guid>
+      <description>Highlights  Reduce time to collect blog post links from hours to seconds. Received 10+ donations and 400+ endorsements.  The problem The user homepage design on Matters (a Chinese blogging platform) fits about three articles. Users&#39; content gets buried in almost no time.
+Some users started to create posts that act as content pages. However, collecting blog posts by hand requires a lot of time and energy.
+The solution A blog post fetcher to fetch, edit, and copy links to users&#39; posts in seconds.</description>
     </item>
     
   </channel>

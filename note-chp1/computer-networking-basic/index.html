@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Computer Networking Basics | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="Computer Networking Basics" />
+<meta name="description" content="Learning notes about basic computer networking." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Computer Networking Basics" />
+<meta property="og:description" content="Learning notes about basic computer networking." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/computer-networking-basic/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-06-18T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-06-18T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Computer Networking Basics"/>
+<meta name="twitter:description" content="Learning notes about basic computer networking."/>
+
+
+
+<meta itemprop="name" content="Computer Networking Basics">
+<meta itemprop="description" content="Learning notes about basic computer networking."><meta itemprop="datePublished" content="2019-06-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="768">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ueVnSz_lXEs&amp;list=PL6gx4Cwl9DGBpuvPW0aHa7mKdn_k9SPKO">Computer Networking by thenewboston</a></li>
+</ul>
+<h2 id="cover-topics">Cover topics</h2>
+<ul>
+<li><a href="#basic">Basic</a></li>
+<li><a href="#topology">Topology</a></li>
+<li><a href="#osi-model">OSI model</a></li>
+<li><a href="#devices">Devices</a></li>
+<li><a href="#ip-address">IP Address</a></li>
+<li><a href="#dhcp-and-dns">DHCP and DNS</a></li>
+<li><a href="#other-topic-in-the-tutorial">Other topic in the tutorial</a></li>
+</ul>
+<h2 id="basic">Basic</h2>
+<ul>
+<li>
+<p>Computers connected to each other to <strong>share data</strong> forms a <strong>Network</strong>.</p>
+</li>
+<li>
+<p>Classify by range and size, network can be divided into three types: <strong>LAN(Local Area Network), MAN(Metropolitan Area Network), WAN(Wide Area Network)</strong>.</p>
+</li>
+<li>
+<p>In a network, **Node(the devices, PC, server, etc)**s are connected with <strong>communication media(the cable, WiFi, etc)</strong>.</p>
+</li>
+<li>
+<p>PC uses a <strong>NIC(Network Interface Card)</strong>, which connects PC&rsquo;s motherboard and ethernet cable(communication media), to connect to a network.</p>
+</li>
+<li>
+<p><strong>Workstation like PC(client)</strong> will send request to <strong>host(web server)</strong> and get their requested file from host.</p>
+</li>
+<li>
+<p><strong>Protocol</strong> is the rule of communication between client and host, it follows three rules: one &ldquo;person&rdquo; speak at a time, response is expected and specific message receive specific response.</p>
+</li>
+</ul>
+<p>An example of protocol: http(protocol)://www.website.org(server name)/index.php(file name).</p>
+<p><a href="#cover-topics">back to top</a></p>
+<h2 id="topology">Topology</h2>
+<p>When setting up network, there are a few <strong>Topology</strong>(the layout of a network) to choose from.</p>
+<ol>
+<li><strong>Bus</strong> topology required a terminator and is cheap but easy to break.</li>
+<li><strong>Ring</strong> topology is more expensive than bus but &ldquo;stronger&rdquo; as well.</li>
+<li><strong>Star</strong> is the most common topology as it costs less and is easy to expand, device are independent in terms of sending signal but once the router/switch breaks, the whole things went down.</li>
+<li><strong>Mesh</strong> on the other hand, handles the problem but is much more expansive to set up and expand. Mesh is often use in MAN and WAN.</li>
+</ol>
+<p><a href="#cover-topics">back to top</a></p>
+<h2 id="osi-model">OSI model</h2>
+<ul>
+<li>Application: interact with user, exp:chrome.</li>
+<li>Presentation: convert computer language to machine language.</li>
+<li>Session: conversation between computer.</li>
+<li>Transport: making sure packets(chunks of data) are delivered reliably.</li>
+<li>Network: determine the best route for data (router).</li>
+<li>Data Link: checking for errors(NIC).</li>
+<li>Physical: cable/fiber optics/electric signal.</li>
+</ul>
+<p><a href="#cover-topics">back to top</a></p>
+<h2 id="devices">Devices</h2>
+<ul>
+<li>
+<p><strong>Modem</strong> is used to connect the biggest network <strong>INTERNET</strong> and <strong>home network</strong>, it converts digital signal to analog signal(signal that can be send by cable) and uses DOCSIS to communicate. To choose a modem, go to your Internet Service Provider(ISP) website and look for approved modem, choose the newest DOCSIS and desired channels.</p>
+</li>
+<li>
+<p><strong>Router</strong> joins network together, it acts as a gateway (whether you want to &ldquo;go out&rdquo; from your network to another network). It can be either wired or wireless, connecting modem and devices in the network.</p>
+</li>
+</ul>
+<p><strong>INTERNET</strong>-connect-<strong>modem</strong>-connect-<strong>(Home Network)router</strong>-connect-<strong>devices</strong></p>
+<ul>
+<li>
+<p><strong>Switch</strong> is used to connect more devices. There are unmanage switch and manage switch, manage switch gives you more control over device but required more set up.</p>
+</li>
+<li>
+<p><strong>Repeater(Extender)</strong> rebroadcasts and boosts the signal, switch and router also act as a repeater.</p>
+</li>
+</ul>
+<p><a href="#cover-topics">back to top</a></p>
+<h2 id="ip-address">IP Address</h2>
+<ul>
+<li>
+<p>To convert bit to value, calculate 2 to the power of bit.</p>
+</li>
+<li>
+<p>IP address contains <strong>Network ID</strong> amd <strong>Host ID</strong>.</p>
+</li>
+<li>
+<p><strong>Subnetting</strong> is used to determine which part of IP address is for Network ID(1) and which part is for Host ID(0).</p>
+</li>
+<li>
+<p><strong>Network IP Address</strong> can be calculated using <strong>IP address</strong> and <strong>Subnet mask</strong>:</p>
+<ul>
+<li>Convert network ip address using IP address and subnet mask into binary(exp 169.174.141.0).</li>
+<li>To calculate the number of host: 2 to the power of number of Host ID(how many number 0 in subnet mask, exp 2 to the power of 4 equals 16). Take away 2(one for broadcast and another for network IP) and you will left with number of host(16-2=14).</li>
+<li>so the usable hosts will be from 169.174.141.1 to 169.174.141.14.</li>
+</ul>
+</li>
+</ul>
+<p>A short hand of IP address and subnet mask is 108.2.2.74/20(CIDR, means write 1 for 20 times in subnet).</p>
+<p><a href="#cover-topics">back to top</a></p>
+<h2 id="dhcp-and-dns">DHCP and DNS</h2>
+<ul>
+<li>
+<p><strong>Dynamic Host Configuration Protocol(DHCP)</strong> assign IP address automatically, it is built in in most router. When connecting new device(for example a PC), the PC will first broadcast a discover message to every device on the network, router will then send back a DHCP offer, PC will send a request saying it will use that IP address, and then router will send AcK containing other information like subnet mask to the PC.</p>
+</li>
+<li>
+<p><strong>Domain Name System</strong> is a server that store IP address, so when user type in domain name(for example abc.com), DNS will translate the domain name in to IP address(abc.com is 1.2.3.4) and send it back to PC, PC will then be able to connect abc.com through the internet(requesting 1.2.3.4 and internet will connect the website&rsquo;s server).</p>
+</li>
+</ul>
+<p><a href="#cover-topics">back to top</a></p>
+<h2 id="other-topic-in-the-tutorial">Other topic in the tutorial</h2>
+<ul>
+<li>Setting up cloud server with Digital Ocean.</li>
+<li>Connecting to server using PuTTY.</li>
+<li>Creating SSH keys.</li>
+<li>Changing the default SSH port(22).</li>
+<li>Setting up FireWall.</li>
+<li>LAMP stack(Linux Apache MySQL PHP).</li>
+<li>Quick set up homepage.</li>
+<li>Installing PhpMyAdmin.</li>
+<li>Securing PhpMyAdmin with htaccess.</li>
+<li>Using FileZilla with SFTP(more secure than FTP).</li>
+<li>Routing table</li>
+<li>iptables Firewall rules</li>
+</ul>
+<p><a href="#cover-topics">back to top</a></p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

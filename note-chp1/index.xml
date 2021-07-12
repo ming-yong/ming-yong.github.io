@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note-chp1s on (ง •̀_•́)ง Ming and Her Code</title>
+    <link>https://mingyong.dev/note-chp1/</link>
+    <description>Recent content in Note-chp1s on (ง •̀_•́)ง Ming and Her Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/note-chp1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 bugs in 2019</title>
+      <link>https://mingyong.dev/note-chp1/5-bugs-in-2019/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/5-bugs-in-2019/</guid>
+      <description>1. Windows 10: Copy and paste stop working Fix: This PC &amp;gt; right click my hard drive &amp;gt; Properties &amp;gt; &amp;ldquo;Tools&amp;rdquo; tab &amp;gt; &amp;ldquo;Check&amp;rdquo; button.
+2. Git Bash: Could not fork child process-There are no available terminals (-1) Fix: In terminal, kill ssh-agent.exe using taskkill /F /IM ssh-agent.exe.
+3. React: something is already running on port 3000 Fix: In terminal:
+ run netstat -ano | findstr :3000 and should get a response of TCP 0.</description>
+    </item>
+    
+    <item>
+      <title>React and  Redux</title>
+      <link>https://mingyong.dev/note-chp1/react-and-redux/</link>
+      <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/react-and-redux/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;  Everything in one // Redux: const ADD = &amp;#39;ADD&amp;#39;; const addMessage = (message) =&amp;gt; { return { type: ADD, message: message } }; const messageReducer = (state = [], action) =&amp;gt; { switch (action.type) { case ADD: return [ ...state, action.message ]; default: return state; } }; const store = Redux.createStore(messageReducer); // React: const Provider = ReactRedux.Provider; const connect = ReactRedux.connect; class Presentational extends React.</description>
+    </item>
+    
+    <item>
+      <title>Redux</title>
+      <link>https://mingyong.dev/note-chp1/redux/</link>
+      <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/redux/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;  All together practice Redux Counter const INCREMENT = &amp;#34;INCREMENT&amp;#34;; // define a constant for increment action types const DECREMENT = &amp;#34;DECREMENT&amp;#34;; // define a constant for decrement action types  // define the counter reducer which will increment or decrement the state based on the action it receives const counterReducer = (state = 0,action)=&amp;gt;{ switch(action.type){ case INCREMENT: return state+=1; case DECREMENT: return state-=1; default: return state; } }; // define an action creator for incrementing const incAction = ()=&amp;gt;{ return {type:INCREMENT}; }; // define an action creator for decrementing const decAction = ()=&amp;gt;{ return {type:DECREMENT}; }; // define the Redux store here, passing in your reducers const store = Redux.</description>
+    </item>
+    
+    <item>
+      <title>React Tic Tac Toe additional features</title>
+      <link>https://mingyong.dev/note-chp1/react-tic-tac-toe-remaining-features/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/react-tic-tac-toe-remaining-features/</guid>
+      <description>In this post, I will finish up my React Tic Tac Toe by adding the following features:
+ Display the location for each move in the format (col, row) in the move history list. Bold the currently selected item in the move list. Rewrite Board to use two loops to make the squares instead of hard-coding them. Add a toggle button that lets you sort the moves in either ascending or descending order.</description>
+    </item>
+    
+    <item>
+      <title>React Tic Tac Toe</title>
+      <link>https://mingyong.dev/note-chp1/react-tic-tac-toe/</link>
+      <pubDate>Sat, 02 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/react-tic-tac-toe/</guid>
+      <description>I will try to explain code of React official tutorial: Tic Tac Toe in the order of:
+ Game class component calculate winner function Board class component Square function component  Here&amp;rsquo;s my project demo here and source code if you&amp;rsquo;re interested.
+The final result A tic tac toe browser game with feature of going back to any previous move.
+The code We have 2 class components(Board and Game), 1 function components(Square), and a function(calculateWinner).</description>
+    </item>
+    
+    <item>
+      <title>Event Capture, Propagation, Bubbling and Once</title>
+      <link>https://mingyong.dev/note-chp1/event-capture-propagation-bubbing-and-once/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/event-capture-propagation-bubbing-and-once/</guid>
+      <description>Reference  JavaScript 30 by Wes Bos  Bubbling, Capture and Propagation When we listen for a click event on every div and console.log(this.classList.value).
+&amp;lt;div class=&amp;#34;one&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;two&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;three&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; Clicking on div with class three will console out &amp;ldquo;three&amp;rdquo;, &amp;ldquo;two&amp;rdquo; and &amp;ldquo;one&amp;rdquo; because when we click on three, we also click on the two that wraps around it, so on and so forth, it will keep zooming out.</description>
+    </item>
+    
+    <item>
+      <title>OSI model</title>
+      <link>https://mingyong.dev/note-chp1/what-is-osi-model/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/what-is-osi-model/</guid>
+      <description>Just like a doctor tells his/her patient &amp;ldquo;There is something wrong with your XYZ.&amp;rdquo;, computer needs a frame of reference for the doctor(or someone who fix the computer) to discuss the issues. Hence, we created a conceptual model called the Open Systems Interconnection(OSI) model.
+OSI model and protocols OSI model defines how information is passed between hardware devices and user applications. It divides network communication into seven layers: Application layer, Presentation layer, Session layer, Transport layer, Network layer, Data link layer and Physical layer, each layer is associated with a packet of protocols(sets of rules, like a language).</description>
+    </item>
+    
+    <item>
+      <title>Reference vs Copy in JS</title>
+      <link>https://mingyong.dev/note-chp1/reference-vs-copy-in-js/</link>
+      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/reference-vs-copy-in-js/</guid>
+      <description>Reference  JavaScript 30 by Wes Bos  Reference vs Copy Normally, a variable(v2), which we assigned the value of another variable(v1) to, will not be affected after we change the value of the original variable(v1).
+//can be strings, numbers, booleans let age = 100; let age2 = age; console.log(age, age2); //100,100 age = 200; console.log(age, age2); //200,100 array However for array, we will have to make a copy of the original array before we change the items.</description>
+    </item>
+    
+    <item>
+      <title>Dev tools tricks</title>
+      <link>https://mingyong.dev/note-chp1/dev-tools-tricks/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/dev-tools-tricks/</guid>
+      <description>Reference  JavaScript 30 by Wes Bos  Tricks //1. The source of the attribute //Inspect element &amp;gt; Break on &amp;gt; attribute modification  //2. interpolated: console.log(&amp;#34;I am a %s string!&amp;#34;, &amp;#34;human&amp;#34;); //3. styled: console.log(&amp;#34;%c I am a text&amp;#34;, &amp;#34;font-size:50px;background:red;&amp;#34;); //4. warning: console.warn(&amp;#34;OH NOOOO&amp;#34;); //5. error: console.error(&amp;#34;NO WAY!&amp;#34;); //6. info: console.info(&amp;#34;Crocodiles ear 3-4 people per year&amp;#34;); //7. testing: console.assert(1 === 2, &amp;#34;That is wrong!&amp;#34;); //8. cleaning console.clear(); //viewing DOM elements console.</description>
+    </item>
+    
+    <item>
+      <title>Rest operator and Spread operator</title>
+      <link>https://mingyong.dev/note-chp1/rest-operator-and-spread-operator/</link>
+      <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/rest-operator-and-spread-operator/</guid>
+      <description>References  MDN  Summary Rest syntax looks exactly like spread syntax but is used for destructuring arrays and objects. In a way, rest syntax is the opposite of spread syntax: spread &amp;lsquo;expands&amp;rsquo; an array into its elements, while rest collects multiple elements and &amp;lsquo;condenses&amp;rsquo; them into a single element.
+Rest operator The rest parameter syntax allows us to represent an indefinite number of arguments as an array.
+ Example:  function sum(.</description>
+    </item>
+    
+    <item>
+      <title>Converting in JavaScript</title>
+      <link>https://mingyong.dev/note-chp1/converting-in-javascript/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/converting-in-javascript/</guid>
+      <description>References  MDN  Content  String to Array: split, Array.from Array to String: join  String to Array split  Used: Split a String object. Mutation: No. Return: An array of strings. Syntax: str.split([separator[, limit]]) Example:  var str = &amp;#34;The quick brown fox jumps over the lazy dog.&amp;#34;; var words = str.split(&amp;#34; &amp;#34;); console.log(words[3]); // expected output: &amp;#34;fox&amp;#34; var chars = str.split(&amp;#34;&amp;#34;); console.log(chars[8]); // expected output: &amp;#34;k&amp;#34; var strCopy = str.</description>
+    </item>
+    
+    <item>
+      <title>Determining? in JavaScript</title>
+      <link>https://mingyong.dev/note-chp1/determining-in-javascript/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/determining-in-javascript/</guid>
+      <description>References  MDN  Content  Object: hasOwnProperty String and Array: includes String: endsWith, startsWith Array: every, some  Object hasOwnProperty  Used: Indicating whether the object has the specified property as its own property (as opposed to inheriting it). Mutation: No. Return: Boolean. Syntax: obj.hasOwnProperty(prop) Example:  const object1 = new Object(); object1.property1 = 42; console.log(object1.hasOwnProperty(&amp;#34;property1&amp;#34;)); // expected output: true console.log(object1.hasOwnProperty(&amp;#34;toString&amp;#34;)); // expected output: false console.log(object1.hasOwnProperty(&amp;#34;hasOwnProperty&amp;#34;)); // expected output: false String and Array includes  Used: Determine whether one string/a certain value may be found within another string/ an array.</description>
+    </item>
+    
+    <item>
+      <title>Finding and Filtering in JavaScript</title>
+      <link>https://mingyong.dev/note-chp1/finding-and-filtering-in-javascript/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/finding-and-filtering-in-javascript/</guid>
+      <description>References  MDN  Content  Other: Math.max, Math.min String and Array: indexOf, lastIndexOf String: search, match Array: findIndex, find, filter  Other Math.max  Used: Find the largest of zero or more numbers. Mutation: No. Return: The largest of the given numbers. Syntax: Math.max([value1[, value2[, ...]]]) Example:  console.log(Math.max(1, 3, 2)); // expected output: 3 console.log(Math.max(-1, -3, -2)); // expected output: -1 var array1 = [1, 3, 2]; console.log(Math.max(...array1)); // expected output: 3 Math.</description>
+    </item>
+    
+    <item>
+      <title>Looping in JavaScript</title>
+      <link>https://mingyong.dev/note-chp1/looping-in-javascript/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/looping-in-javascript/</guid>
+      <description>References  MDN  Content  Other: for&amp;hellip;in, for&amp;hellip;of Object: Objecet.entries, Objecet.keys, Objecet.values Array: map, forEach, reduce  Other for&amp;hellip;in The for...in loop below iterates over all of the object&amp;rsquo;s enumerable, non-Symbol properties and logs a string of the property names and their values. for...in should not be used to iterate over an Array where the index order is important.
+var obj = { a: 1, b: 2, c: 3 }; for (const prop in obj) { console.</description>
+    </item>
+    
+    <item>
+      <title>Manipulating in JavaScript</title>
+      <link>https://mingyong.dev/note-chp1/manipulating-in-javascript/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/manipulating-in-javascript/</guid>
+      <description>References  MDN  Content  String and Array: concat, slice String: replace, trim, charAt, charCodeAt, fromCharCode Array: sort, splice, push, pop, shift, unshift  String and Array concat  Used: Merge two or more strings/arrays. Mutation: No. Return: A new string/array. Syntax:  string: str.concat(string2[, string3, ..., stringN]) array: var new_array = old_array.concat([value1[, value2[, ...[, valueN]]]])   Example:  //string var str1 = &amp;#34;Hello&amp;#34;; var str2 = &amp;#34;World&amp;#34;; console.</description>
+    </item>
+    
+    <item>
+      <title>DOM Manipulation</title>
+      <link>https://mingyong.dev/note-chp1/dom-manipulation/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/dom-manipulation/</guid>
+      <description>References  YouTube Video &amp;ldquo;JavaScript and the HTML DOM&amp;rdquo; by freeCodeCamp.**  Cover topics  Selecting and Changing element Setting and Getting CSS style DOM Event and addEventListener DOM Nodes Animation in the DOM and requestAnimationFrame Window Object Pop up boxes Cookies vs localStorage vs sessionStorage Browser history  Selecting and Changing element //by id var div1 = document.getElementById(&amp;#34;id&amp;#34;); document.querySelector(&amp;#34;#id&amp;#34;); //by class document.getElementsByClassName(&amp;#34;className&amp;#34;); document.querySelector(&amp;#34;.className&amp;#34;); //only in div1 div1.getElementsByClassName(&amp;#34;className&amp;#34;); //by tag document.</description>
+    </item>
+    
+    <item>
+      <title>React(1/2)</title>
+      <link>https://mingyong.dev/note-chp1/react-part1/</link>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/react-part1/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;  Cover topics  Introduction JSX Component Props State  Introduction React, popularized by Facebook, is an open-source JavaScript library for building user interfaces. It is used to create components, handle state and props, utilize event listeners and certain life cycle methods to update data as it changes. React combines HTML with JavaScript functionality to create its own markup language, JSX.
+JSX JSX is a convenient tool to write readable HTML within JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>React(2/2)</title>
+      <link>https://mingyong.dev/note-chp1/react-part2/</link>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/react-part2/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;  Cover topics  Life Cycle Method and Event Listener Style, JS and Other  Life Cycle Method and Event Listener Life Cycle methods allow you to catch components at certain points in time.
+//---A list of lifecycle method: //componentWillMount() //componentDidMount() //componentWillReceiveProps() //shouldComponentUpdate() //componentWillUpdate() //componentDidUpdate() //componentWillUnmount()  //componentWillMount() class MyComponent extends React.Component { constructor(props) { super(props); } componentWillMount() { console.log(&amp;#34;Am I in the console?</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap</title>
+      <link>https://mingyong.dev/note-chp1/bootstrap/</link>
+      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/bootstrap/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;.  Bootstrap is a front-end framework used to design responsive web pages and web applications. It takes a mobile-first approach to web development. Bootstrap includes pre-built CSS styles and classes, plus some JavaScript functionality. Bootstrap uses a responsive 12 column grid layout and has design templates for: buttons, images, tables, forms navigation.
+Cover topics  To Start Basic  To Start //link to add bootstrap &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://maxcdn.</description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>https://mingyong.dev/note-chp1/jquery/</link>
+      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/jquery/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;.  jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side. jQuery&amp;rsquo;s most recognizable characteristic is its dollar sign ($) syntax. With it, you can easily manipulate elements, create animations and handle input events.
+Cover topics  Basic  Basic // dollar sign operator/ bling $(document).ready(function(){ //animate.css library  //target elements by type, class and id $(&amp;#34;button&amp;#34;).</description>
+    </item>
+    
+    <item>
+      <title>Computer Networking Basics</title>
+      <link>https://mingyong.dev/note-chp1/computer-networking-basic/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/computer-networking-basic/</guid>
+      <description>References  Computer Networking by thenewboston  Cover topics  Basic Topology OSI model Devices IP Address DHCP and DNS Other topic in the tutorial  Basic   Computers connected to each other to share data forms a Network.
+  Classify by range and size, network can be divided into three types: LAN(Local Area Network), MAN(Metropolitan Area Network), WAN(Wide Area Network).
+  In a network, **Node(the devices, PC, server, etc)**s are connected with communication media(the cable, WiFi, etc).</description>
+    </item>
+    
+    <item>
+      <title>Functional Programming</title>
+      <link>https://mingyong.dev/note-chp1/functional-programming/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/functional-programming/</guid>
+      <description>Reference  freeCodeCamp  Cover topics  Functional Programming Terms Summary   Functional Programming Functional programming is a style of programming which is about:
+  Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change. For example, declare function arguments instead of depends on variable present.
+  Pure functions - the same input always gives the same output.</description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://mingyong.dev/note-chp1/regular-expressions/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/regular-expressions/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Javascript Algorithms And Data Structures Certification&amp;rdquo;  Cover topics  Methods:Test,Match,Replace &amp;ldquo;Filter&amp;rdquo; your match: Flag, Operator Matching possibilities: Wild card, Classes, Set Caret symbol (^): Negated character set, Check the start and check the end Optional element: All or none Patterns occur times: One or more, zero or more Shortest match: Lazy match Character class shortcut: Whitespace, Letters, Numbers Match quantity: Quantity specifiers Multiple patterns: Positive and Negative Lookahead Reuse patterns: Capture group Practice   Regular Expression also known as &amp;ldquo;regex&amp;rdquo; or &amp;ldquo;regexp&amp;rdquo;, it helps programmers match, search, and replace text.</description>
+    </item>
+    
+    <item>
+      <title>Sass</title>
+      <link>https://mingyong.dev/note-chp1/sass/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/sass/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Front End Libraries Certification&amp;rdquo;  Cover topics  Variable Nesting Mixins: reusable CSS If-Else statement For loop Each and Map While loop Split code into smaller chunks with partials Extend   Variable $text-color: red; h1 { color: $text-color; } back to top
+Nesting nav { ul { li { } } } back to top
+Mixins: reusable CSS //As features are added to browsers, CSS rules using them may need vendor prefixes.</description>
+    </item>
+    
+    <item>
+      <title>HTML and CSS</title>
+      <link>https://mingyong.dev/note-chp1/html-and-css/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/note-chp1/html-and-css/</guid>
+      <description>References  freeCodeCamp &amp;ldquo;Responsive Web Design Certification&amp;rdquo;  Cover topics  Applied Visual Design Applied Accessibility Responsive Web Design Principles CSS Flexbox CSS Grid  Applied Visual Design CSS:
+/*box-shadow*/ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /*offset-x(how far to push the shadow horizontally from the element)*/ /*offset-y(how far to push the shadow vertically from the element)*/ /*blur-radius(optional), spread radius (optional), color value*/ /*text transform property*/ text-transform: lowercase; /*uppercase, capitalize, initial(default), inherit, none*/ /*line-height*/ line-height:25px; /*relative position and offset*/ p{ position:relative; bottom:10px; } /*HSL*/ Hue(color spectrum) Saturation(grey amount) Lightness(0-360, 100%, 100%);/*adjust color tone*/ /*linear gradient*/ background: linear-gradient(gradient_direction, color1, color2, color3, .</description>
+    </item>
+    
+  </channel>
+</rss>

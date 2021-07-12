@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>React(1/2) | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="React(1/2)" />
+<meta name="description" content="Notes about React." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="React(1/2)" />
+<meta property="og:description" content="Notes about React." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/react-part1/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-07-11T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-07-11T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React(1/2)"/>
+<meta name="twitter:description" content="Notes about React."/>
+
+
+
+<meta itemprop="name" content="React(1/2)">
+<meta itemprop="description" content="Notes about React."><meta itemprop="datePublished" content="2019-07-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1344">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/">freeCodeCamp &ldquo;Front End Libraries Certification&rdquo;</a></li>
+</ul>
+<h2 id="cover-topics">Cover topics</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#jsx">JSX</a></li>
+<li><a href="#component">Component</a></li>
+<li><a href="#props">Props</a></li>
+<li><a href="#state">State</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React, popularized by Facebook, is an <strong>open-source JavaScript library for building user interfaces</strong>. It is used to create <strong>components</strong>, <strong>handle state and props</strong>, <strong>utilize event listeners</strong> and <strong>certain life cycle methods</strong> to update data as it changes. React combines HTML with JavaScript functionality to create its own markup language, <strong>JSX</strong>.</p>
+<h2 id="jsx">JSX</h2>
+<p>JSX is a convenient tool to write readable HTML within JavaScript.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//---It must return a single element.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">JSX</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">JSX</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">JSX</span> <span style="color:#f92672">=</span> (
+ <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">I</span> <span style="color:#a6e22e">am</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">h1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+  {<span style="color:#75715e">/*This is a comment*/</span>}
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">I</span> <span style="color:#a6e22e">am</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">we</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">are</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">-</span><span style="color:#a6e22e">s</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+ <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+);
+
+<span style="color:#75715e">//---naming convention for all HTML attributes and event references in JSX become camelCase.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">JSX</span> <span style="color:#f92672">=</span> (
+ <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myDiv&#34;</span><span style="color:#f92672">&gt;</span>
+  {<span style="color:#75715e">/*use className instead of class, because it is a reserve word in JS*/</span>}
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">to</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">div</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+ <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+);
+
+<span style="color:#75715e">//---self-closing JSX tag
+</span><span style="color:#75715e">//&lt;br&gt; must be written as &lt;br /&gt;
+</span><span style="color:#75715e">//&lt;div&gt;&lt;/div&gt; can also be written as &lt;div /&gt;, but will not be able to include things between
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">JSX</span> <span style="color:#f92672">=</span> (
+ <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">React</span><span style="color:#f92672">!&lt;</span><span style="color:#e6db74">/h2&gt; &lt;br /</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Be</span> <span style="color:#a6e22e">sure</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">close</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">tags</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">hr</span> <span style="color:#f92672">/&gt;</span>
+ <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+);
+
+<span style="color:#75715e">//---With React, we can render this JSX directly to the HTML DOM using React&#39;s rendering API known as ReactDOM.
+</span><span style="color:#75715e">//format: ReactDOM.render(componentToRender, targetNode);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">JSX</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>)); <span style="color:#75715e">//call after JSX element declaration
+</span></code></pre></div><h2 id="component">Component</h2>
+<p>React components are the core building blocks of React applications.</p>
+<p>Component architecture React provides allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//---There are 2 way to create a React component.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//---1.stateless functional component: create component with a JS function
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// After being transpiled, the &lt;div&gt; will have a CSS class of &#39;customClass&#39;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DemoComponent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+ <span style="color:#75715e">//React requires your function name to begin with a capital letter.
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">return</span> (
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;customClass&#34;</span> <span style="color:#f92672">/&gt;</span> <span style="color:#75715e">//returns either JSX or null
+</span><span style="color:#75715e"></span> );
+};
+
+<span style="color:#75715e">//---2.ES6 class syntax
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//Kitten class now has access to many useful React features, such as local state and lifecycle hooks.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Kitten</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#75715e">//Kitten extends React.Component
+</span><span style="color:#75715e"></span> <span style="color:#75715e">//constructor is a special method used during the initialization of objects that are created with the class keyword
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>); <span style="color:#75715e">// super is used to call the constructor of the parent class, in this case React.Component
+</span><span style="color:#75715e"></span> }
+
+ <span style="color:#75715e">//It is best practice to call a component&#39;s constructor with super, and pass props to both. This makes sure the component is initialized properly
+</span><span style="color:#75715e"></span>
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hi</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+ }
+}
+
+<span style="color:#75715e">//---Component with Composition
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">TypesOfFruit</span> <span style="color:#f92672">=</span> () =&gt; {
+ <span style="color:#75715e">//children of Fruits
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">return</span> (
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Fruits</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Apples</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Blueberries</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Strawberries</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Bananas</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+ );
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Fruits</span> <span style="color:#f92672">=</span> () =&gt; {
+ <span style="color:#75715e">//parent of TypesOfFruit
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">return</span> (
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">TypesOfFruit</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+ );
+};
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TypesOfFood</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#75715e">//parent of Fruits
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Types</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">Food</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Fruits</span> <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//---Render a Class component to the DOM
+</span><span style="color:#75715e">//format: ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">TypesOfFood</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;challenge-node&#34;</span>));
+</code></pre></div><h2 id="props">Props</h2>
+<p>In React, you can pass props, or properties, to child components.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//App component renders a child component called Welcome that is a stateless functional component.
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">App</span><span style="color:#f92672">&gt;</span>
+ <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mark&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/App&gt;;</span>
+
+<span style="color:#75715e">//You use custom HTML attributes that React provides support for to pass the property user to the component Welcome.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Welcome</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span> =&gt; <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">user</span>}<span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+
+<span style="color:#75715e">//---passing array as props
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">List</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span> =&gt; {
+ <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">tasks</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;, &#34;</span>)}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;;</span>
+};
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ToDo</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">To</span> <span style="color:#a6e22e">Do</span> <span style="color:#a6e22e">Lists</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Today</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">List</span> <span style="color:#a6e22e">tasks</span><span style="color:#f92672">=</span>{[<span style="color:#e6db74">&#34;walk dog&#34;</span>, <span style="color:#e6db74">&#34;workout&#34;</span>]} <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Tomorrow</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">List</span> <span style="color:#a6e22e">tasks</span><span style="color:#f92672">=</span>{[<span style="color:#e6db74">&#34;walk dog&#34;</span>, <span style="color:#e6db74">&#34;workout&#34;</span>, <span style="color:#e6db74">&#34;grocery&#34;</span>]} <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//---default props
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">MyComponent</span>.<span style="color:#a6e22e">defaultProps</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">location</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;San Francisco&#34;</span> };
+
+<span style="color:#75715e">//---override default
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Items</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span> =&gt; {
+ <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Current</span> <span style="color:#a6e22e">Quantity</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">Items</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Cart</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">quantity</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+};
+
+<span style="color:#a6e22e">Items</span>.<span style="color:#a6e22e">defaultProps</span> <span style="color:#f92672">=</span> {
+ <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+};
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShoppingCart</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Items</span> <span style="color:#a6e22e">quantity</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">10</span>} <span style="color:#f92672">/&gt;</span>;
+ }
+}
+
+<span style="color:#75715e">//---Define expected props type
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">MyComponent</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">handleClick</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">func</span>.<span style="color:#a6e22e">isRequired</span> };
+
+<span style="color:#75715e">//---Note: As of React v15.5.0, PropTypes is imported independently from React, like this:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">PropTypes</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+
+<span style="color:#75715e">//---use this keyword in ES6 class
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReturnTempPassword</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#a6e22e">Your</span> <span style="color:#a6e22e">temporary</span> <span style="color:#a6e22e">password</span> <span style="color:#a6e22e">is</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">strong</span><span style="color:#f92672">&gt;</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">tempPassword</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/strong&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResetPassword</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Reset</span> <span style="color:#a6e22e">Password</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h3</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">We</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">ve</span> <span style="color:#a6e22e">generated</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">temporary</span> <span style="color:#a6e22e">password</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">you</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h3&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h3</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Please</span> <span style="color:#a6e22e">reset</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">password</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">account</span> <span style="color:#a6e22e">settings</span> <span style="color:#a6e22e">ASAP</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h3&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ReturnTempPassword</span> <span style="color:#a6e22e">tempPassword</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12345678&#34;</span> <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+</code></pre></div><h2 id="state">State</h2>
+<p>State is one of the most powerful features of components in React. It consists of any data your application needs to know about, that can change over time and allows you to track important data in your app and render a UI in response to changes in this data.</p>
+<ul>
+<li>stateless functional component: any function you write which accepts props and returns JSX.</li>
+<li>stateless component: a class that extends React.Component, but does not use internal state (covered in the next challenge).</li>
+<li>stateful component: any component that does maintain its own internal state.You may see stateful components referred to simply as components or React components.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//---Note that you must create a class component by extending React.Component in order to create state like this.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StatefulComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#75715e">// initialize state here
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ming&#34;</span> };
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//another way to render state in the UI
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;freeCodeCamp&#34;</span>
+  };
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">name</span>;
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//---set state: React expects you to never modify state directly, instead always use this.setState() when state changes occur.
+</span><span style="color:#75715e">//toggle element
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+   <span style="color:#a6e22e">visibility</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+  };
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">toggleVisibility</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">toggleVisibility</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>); <span style="color:#75715e">//bind this to class method
+</span><span style="color:#75715e"></span> }
+ <span style="color:#a6e22e">toggleVisibility</span>() {
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">visibility</span>) {
+   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+    <span style="color:#a6e22e">visibility</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+   });
+  } <span style="color:#66d9ef">else</span> {
+   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+    <span style="color:#a6e22e">visibility</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+   });
+  }
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">visibility</span>) {
+   <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">toggleVisibility</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">Me</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Now</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">see</span> <span style="color:#a6e22e">me</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+   );
+  } <span style="color:#66d9ef">else</span> {
+   <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">toggleVisibility</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">Me</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+   );
+  }
+ }
+}
+
+<span style="color:#75715e">//counter
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+   <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+  };
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">increment</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">increment</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">decrement</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">decrement</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reset</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reset</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+ }
+ <span style="color:#a6e22e">increment</span>() {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+   <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+  });
+ }
+
+ <span style="color:#a6e22e">decrement</span>() {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+   <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+  });
+ }
+
+ <span style="color:#a6e22e">reset</span>() {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+   <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+  });
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inc&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">increment</span>}<span style="color:#f92672">&gt;</span>
+     <span style="color:#a6e22e">Increment</span><span style="color:#f92672">!</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dec&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">decrement</span>}<span style="color:#f92672">&gt;</span>
+     <span style="color:#a6e22e">Decrement</span><span style="color:#f92672">!</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;reset&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reset</span>}<span style="color:#f92672">&gt;</span>
+     <span style="color:#a6e22e">Reset</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Current</span> <span style="color:#a6e22e">Count</span><span style="color:#f92672">:</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//---controlled form
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyForm</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+   <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+   <span style="color:#a6e22e">submit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
+  };
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleSubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleSubmit</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+ }
+ <span style="color:#a6e22e">handleChange</span>(<span style="color:#a6e22e">event</span>) {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+   <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>
+  });
+ }
+ <span style="color:#a6e22e">handleSubmit</span>(<span style="color:#a6e22e">event</span>) {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+   <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+   <span style="color:#a6e22e">submit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>
+  });
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#a6e22e">onSubmit</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleSubmit</span>}<span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">input</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#f92672">/&gt;</span>
+     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">submit</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//---Pass State as Props to Child Components
+</span><span style="color:#75715e">//Paradigms in React:
+</span><span style="color:#75715e">//unidirectional data flow
+</span><span style="color:#75715e">//complex stateful apps can be broken down into just a few, or maybe a single, stateful component.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyApp</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;CamperBot&#34;</span>
+  };
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Navbar</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">name</span>} <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Navbar</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">my</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">is</span><span style="color:#f92672">:</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#75715e">//---pass a callback as props
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyApp</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+   <span style="color:#a6e22e">inputValue</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
+  };
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+ }
+ <span style="color:#a6e22e">handleChange</span>(<span style="color:#a6e22e">event</span>) {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+   <span style="color:#a6e22e">inputValue</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>
+  });
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">GetInput</span> <span style="color:#a6e22e">input</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">inputValue</span>} <span style="color:#a6e22e">handleChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">RenderInput</span> <span style="color:#a6e22e">input</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">inputValue</span>} <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GetInput</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h3</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">Input</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h3&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">input</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderInput</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+ <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+ }
+ <span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h3</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Input</span> <span style="color:#a6e22e">Render</span><span style="color:#f92672">:&lt;</span><span style="color:#960050;background-color:#1e0010">/h3&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">input</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+  );
+ }
+}
+</code></pre></div>
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

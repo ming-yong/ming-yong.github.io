@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Converting in JavaScript | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="Converting in JavaScript" />
+<meta name="description" content="Notes about converting in JavaScript." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Converting in JavaScript" />
+<meta property="og:description" content="Notes about converting in JavaScript." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/converting-in-javascript/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-07-29T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-07-29T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Converting in JavaScript"/>
+<meta name="twitter:description" content="Notes about converting in JavaScript."/>
+
+
+
+<meta itemprop="name" content="Converting in JavaScript">
+<meta itemprop="description" content="Notes about converting in JavaScript."><meta itemprop="datePublished" content="2019-07-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="167">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/">MDN</a></li>
+</ul>
+<h2 id="content">Content</h2>
+<ul>
+<li>String to Array: <a href="#split">split</a>, <a href="#arrayfrom">Array.from</a></li>
+<li>Array to String: <a href="#join">join</a></li>
+</ul>
+<h2 id="string-to-array">String to Array</h2>
+<h3 id="split">split</h3>
+<ul>
+<li><strong>Used:</strong> Split a String object.</li>
+<li><strong>Mutation:</strong> No.</li>
+<li><strong>Return:</strong> An array of strings.</li>
+<li><strong>Syntax:</strong> <code>str.split([separator[, limit]])</code></li>
+<li><strong>Example:</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The quick brown fox jumps over the lazy dog.&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">words</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34; &#34;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">words</span>[<span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// expected output: &#34;fox&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">chars</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">chars</span>[<span style="color:#ae81ff">8</span>]); <span style="color:#75715e">// expected output: &#34;k&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strCopy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">split</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">strCopy</span>); <span style="color:#75715e">// expected output: Array [&#34;The quick brown fox jumps over the lazy dog.&#34;]
+</span></code></pre></div><h3 id="arrayfrom">Array.from</h3>
+<ul>
+<li><strong>Used:</strong> Create a new, shallow-copied Array instance from an array-like or iterable object.</li>
+<li><strong>Mutation:</strong> No.</li>
+<li><strong>Return:</strong> A new Array instance.</li>
+<li><strong>Syntax:</strong> <code>Array.from(arrayLike[, mapFn[, thisArg]])</code></li>
+<li><strong>Example:</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#34;foo&#34;</span>));
+<span style="color:#75715e">// expected output: Array [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>));
+<span style="color:#75715e">// expected output: Array [2, 4, 6]
+</span></code></pre></div><h2 id="array-to-string">Array to String</h2>
+<h3 id="join">join</h3>
+<ul>
+<li><strong>Used:</strong> Join arrays.</li>
+<li><strong>Mutation:</strong> No.</li>
+<li><strong>Return:</strong> A new string.</li>
+<li><strong>Syntax:</strong> <code>arr.join([separator])</code></li>
+<li><strong>Example:</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Fire&#34;</span>, <span style="color:#e6db74">&#34;Air&#34;</span>, <span style="color:#e6db74">&#34;Water&#34;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>()); <span style="color:#75715e">// expected output: &#34;Fire,Air,Water&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// expected output: &#34;FireAirWater&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;-&#34;</span>)); <span style="color:#75715e">// expected output: &#34;Fire-Air-Water&#34;
+</span></code></pre></div>
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

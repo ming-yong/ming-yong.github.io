@@ -6,16 +6,19 @@
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://mingyong.dev/blog/matalogue/</loc>
+    <loc>https://mingyong.dev/blog/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/blog/</loc>
+    <loc>https://mingyong.dev/projects/matalogue/</loc>
+    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/tags/graphql/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/blog/forming-a-graphql-query/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/tags/graphql/</loc>
+    <loc>https://mingyong.dev/projects/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/tags/react/</loc>
@@ -48,94 +51,90 @@
     <loc>https://mingyong.dev/tags/productivity/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/tags/yearinreview/</loc>
+    <loc>https://mingyong.dev/journey/chapter1/</loc>
     <lastmod>2020-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/blog/review-july-2020/</loc>
+    <loc>https://mingyong.dev/journey/</loc>
     <lastmod>2020-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/5-bugs-in-2019/</loc>
+    <loc>https://mingyong.dev/note-chp1/5-bugs-in-2019/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/</loc>
+    <loc>https://mingyong.dev/note-chp1/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/react-and-redux/</loc>
+    <loc>https://mingyong.dev/note-chp1/react-and-redux/</loc>
     <lastmod>2019-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/redux/</loc>
+    <loc>https://mingyong.dev/note-chp1/redux/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/react-tic-tac-toe-remaining-features/</loc>
+    <loc>https://mingyong.dev/note-chp1/react-tic-tac-toe-remaining-features/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/react-tic-tac-toe/</loc>
+    <loc>https://mingyong.dev/note-chp1/react-tic-tac-toe/</loc>
     <lastmod>2019-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/event-capture-propagation-bubbing-and-once/</loc>
+    <loc>https://mingyong.dev/note-chp1/event-capture-propagation-bubbing-and-once/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/what-is-osi-model/</loc>
+    <loc>https://mingyong.dev/note-chp1/what-is-osi-model/</loc>
     <lastmod>2019-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/reference-vs-copy-in-js/</loc>
+    <loc>https://mingyong.dev/note-chp1/reference-vs-copy-in-js/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/dev-tools-tricks/</loc>
+    <loc>https://mingyong.dev/note-chp1/dev-tools-tricks/</loc>
     <lastmod>2019-08-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/rest-operator-and-spread-operator/</loc>
+    <loc>https://mingyong.dev/note-chp1/rest-operator-and-spread-operator/</loc>
     <lastmod>2019-08-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/converting-in-javascript/</loc>
+    <loc>https://mingyong.dev/note-chp1/converting-in-javascript/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/determining-in-javascript/</loc>
+    <loc>https://mingyong.dev/note-chp1/determining-in-javascript/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/finding-and-filtering-in-javascript/</loc>
+    <loc>https://mingyong.dev/note-chp1/finding-and-filtering-in-javascript/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/looping-in-javascript/</loc>
+    <loc>https://mingyong.dev/note-chp1/looping-in-javascript/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/manipulating-in-javascript/</loc>
+    <loc>https://mingyong.dev/note-chp1/manipulating-in-javascript/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/dom-manipulation/</loc>
+    <loc>https://mingyong.dev/note-chp1/dom-manipulation/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/react-part1/</loc>
+    <loc>https://mingyong.dev/note-chp1/react-part1/</loc>
     <lastmod>2019-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/react-part2/</loc>
+    <loc>https://mingyong.dev/note-chp1/react-part2/</loc>
     <lastmod>2019-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/bootstrap/</loc>
+    <loc>https://mingyong.dev/note-chp1/bootstrap/</loc>
     <lastmod>2019-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/jquery/</loc>
+    <loc>https://mingyong.dev/note-chp1/jquery/</loc>
     <lastmod>2019-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/computer-networking-basic/</loc>
+    <loc>https://mingyong.dev/note-chp1/computer-networking-basic/</loc>
     <lastmod>2019-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/functional-programming/</loc>
+    <loc>https://mingyong.dev/note-chp1/functional-programming/</loc>
     <lastmod>2019-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/regular-expressions/</loc>
+    <loc>https://mingyong.dev/note-chp1/regular-expressions/</loc>
     <lastmod>2019-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/sass/</loc>
+    <loc>https://mingyong.dev/note-chp1/sass/</loc>
     <lastmod>2019-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/notebook/html-and-css/</loc>
+    <loc>https://mingyong.dev/note-chp1/html-and-css/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/categories/</loc>
-  </url><url>
-    <loc>https://mingyong.dev/notebook/</loc>
-  </url><url>
-    <loc>https://mingyong.dev/projects/</loc>
   </url>
 </urlset>

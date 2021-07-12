@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Regular Expressions | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="Regular Expressions" />
+<meta name="description" content="Notes about regular expressions." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Regular Expressions" />
+<meta property="og:description" content="Notes about regular expressions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/note-chp1/regular-expressions/" /><meta property="article:section" content="note-chp1" />
+<meta property="article:published_time" content="2019-06-06T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-06-06T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Regular Expressions"/>
+<meta name="twitter:description" content="Notes about regular expressions."/>
+
+
+
+<meta itemprop="name" content="Regular Expressions">
+<meta itemprop="description" content="Notes about regular expressions."><meta itemprop="datePublished" content="2019-06-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1051">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/">freeCodeCamp &ldquo;Javascript Algorithms And Data Structures Certification&rdquo;</a></li>
+</ul>
+<h2 id="cover-topics">Cover topics</h2>
+<ul>
+<li><a href="#methods-test-match-replace">Methods:Test,Match,Replace</a></li>
+<li><a href="#filter-your-match-flag-operator">&ldquo;Filter&rdquo; your match: Flag, Operator</a></li>
+<li><a href="#matching-possibilities-wild-card-classes-set">Matching possibilities: Wild card, Classes, Set</a></li>
+<li><a href="#caret-symbol--negated-character-set-check-the-start-and-check-the-end">Caret symbol (^): Negated character set, Check the start and check the end</a></li>
+<li><a href="#optional-element-all-or-none">Optional element: All or none</a></li>
+<li><a href="#patterns-occur-times-one-or-more-zero-or-more">Patterns occur times: One or more, zero or more</a></li>
+<li><a href="#shortest-match-lazy-match">Shortest match: Lazy match</a></li>
+<li><a href="#character-class-shortcut-whitespace-letters-numbers">Character class shortcut: Whitespace, Letters, Numbers</a></li>
+<li><a href="#match-quantity-quantity-specifiers">Match quantity: Quantity specifiers</a></li>
+<li><a href="#multiple-patterns-positive-and-negative-lookahead">Multiple patterns: Positive and Negative Lookahead</a></li>
+<li><a href="#reuse-patterns-capture-group">Reuse patterns: Capture group</a></li>
+<li><a href="#practice">Practice</a></li>
+</ul>
+<hr>
+<p>Regular Expression also known as &ldquo;regex&rdquo; or &ldquo;regexp&rdquo;, it helps programmers match, search, and replace text.</p>
+<p>In all the code blocks below, I will be using this variable if no other variable declaration was made. Return result will be comment beside.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">me</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Yong Ming&#34;</span>;
+</code></pre></div><h2 id="methods-test-match-replace">Methods: Test, Match, Replace</h2>
+<p>Three methods to use with regular expression:</p>
+<ol>
+<li>Test method <code>.test()</code>: checks if the text exist and returns a boolean value.</li>
+<li>Match method <code>.match()</code>: returns match word.</li>
+<li>Replace method <code>.replace()</code>: replace the matching pattern.</li>
+</ol>
+<p>Notice in Test method regex pattern comes first whereas in Match method string comes first.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/ng/</span>;
+
+<span style="color:#75715e">//Test method: Is regex(pattern) exists in me(string)?
+</span><span style="color:#75715e"></span><span style="color:#e6db74">/Code/</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;freeCodeCamp&#34;</span>); <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">me</span>); <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//Match method: Do Str has matching Regex?
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;freeCodeCamp&#34;</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/Code/</span>); <span style="color:#75715e">//&#34;Code&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#a6e22e">regex</span>); <span style="color:#75715e">//&#34;ng&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//Replace method: find Regex in Str and replace it
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">regex</span>, <span style="color:#e6db74">&#34;ee&#34;</span>); <span style="color:#75715e">//&#34;Yoee Ming&#34;----me is still Yong Ming
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="filter-your-match-flag-operator">&ldquo;Filter&rdquo; your match: Flag, Operator</h2>
+<p>Two flags are introduced:</p>
+<ol>
+<li>ignore flag <code>i</code>: ignore case/case insensitive.</li>
+<li>global flag <code>g</code>: match all occurrences.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/n/g</span>); <span style="color:#75715e">//Returns &#34;n&#34;,&#34;n&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/y/i</span>); <span style="color:#75715e">//Returns &#34;Y&#34;
+</span></code></pre></div><p>One operator: or <code>|</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/y|m/i</span>); <span style="color:#75715e">//&#34;Y&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/p|m/i</span>); <span style="color:#75715e">//&#34;M&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/m|y/i</span>); <span style="color:#75715e">//&#34;Y&#34;----returns the first result
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/m|y/gi</span>); <span style="color:#75715e">//&#34;Y&#34; &#34;M&#34;
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="matching-possibilities-wild-card-classes-set">Matching possibilities: Wild card, Classes, Set</h2>
+<ol>
+<li>wild card <code>.</code>: multiple possibilities.</li>
+<li>character classes <code>[]</code>: character(s) you want.</li>
+<li>character set <code>[-]</code>: character within a range(for example [a-z], [z-a] will throw a SyntaxError, [a-a] works fine).</li>
+<li>number set: same as character set.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/.ng/g</span>); <span style="color:#75715e">//&#34;ong&#34;,&#34;ing&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/[aeiou]/gi</span>); <span style="color:#75715e">//&#34;o&#34;,&#34;i&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/[m-y]/gi</span>); <span style="color:#75715e">//&#34;Y&#34;,&#34;o&#34;,&#34;n&#34;,&#34;M&#34;,&#34;n&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/[0-9]/gi</span>); <span style="color:#75715e">//null
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="caret-symbol--negated-character-set-check-the-start-and-check-the-end">Caret symbol (^): Negated character set, Check the start and check the end</h2>
+<p>If you want the exclude element from your match, use negated character set, a caret symbol <code>^</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/[^aeiou]/gi</span>); <span style="color:#75715e">//&#34;Y&#34;,&#34;n&#34;,&#34;g&#34;,&#34; &#34;,&#34;M&#34;,&#34;n&#34;,&#34;g&#34;----it return whitespace too!
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/[^a-z]/gi</span>); <span style="color:#75715e">//&#34; &#34;----works with character set too
+</span></code></pre></div><p>Another use of caret symbol is to check if patterns occurs at the beginning of strings:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//aeiou that occurs at the start of a string
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/^[aeiou]/gi</span>); <span style="color:#75715e">//null----be careful where you place the ^
+</span></code></pre></div><p>In contrast, use dollar sign <code>$</code> to check if patterns occur at the end:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/g$/gi</span>); <span style="color:#75715e">//&#34;g&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/Ming$/gi</span>); <span style="color:#75715e">//&#34;Ming&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/$g/gi</span>); <span style="color:#75715e">//null----will not work
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="optional-element-all-or-none">Optional element: All or none</h2>
+<p>Check for optional element in string using <code>?</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">american</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;color&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">british</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;colour&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rainbowRegex</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/colou?r/</span>;
+<span style="color:#a6e22e">rainbowRegex</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">american</span>); <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">rainbowRegex</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">british</span>); <span style="color:#75715e">//true
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="patterns-occur-times-one-or-more-zero-or-more">Patterns occur times: One or more, zero or more</h2>
+<ol>
+<li>One or more times <code>+</code></li>
+<li>Zero or more times <code>*</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fallFromFloorOne</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bang! Aaaaaahhhhh&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fallFromFloorTen</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Aaaaaahhhhh Bang!&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hi</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hi hi hii&#34;</span>;
+
+<span style="color:#a6e22e">fallFromFloorOne</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a/i</span>); <span style="color:#75715e">//&#34;a&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fallFromFloorTen</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a/i</span>); <span style="color:#75715e">//&#34;A&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fallFromFloorOne</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a/gi</span>); <span style="color:#75715e">//&#34;a&#34;, &#34;A&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fallFromFloorTen</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a/gi</span>); <span style="color:#75715e">//&#34;A&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;, &#34;a&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fallFromFloorOne</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a+/i</span>); <span style="color:#75715e">//&#34;a&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fallFromFloorTen</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a+/i</span>); <span style="color:#75715e">//&#34;Aaaaaa&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fallFromFloorOne</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a+/gi</span>); <span style="color:#75715e">//&#34;a&#34;, &#34;Aaaaaa&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fallFromFloorTen</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a+/gi</span>); <span style="color:#75715e">//&#34;Aaaaaa&#34;, &#34;a&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fallFromFloorOne</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/hi*/i</span>); <span style="color:#75715e">//&#34;h&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fallFromFloorTen</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/hi*/gi</span>); <span style="color:#75715e">//&#34;h&#34;, &#34;h&#34;, &#34;h&#34;, &#34;h&#34;, &#34;h&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">hi</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/hi*/i</span>); <span style="color:#75715e">//&#34;hi&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">hi</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/hi*/gi</span>); <span style="color:#75715e">//&#34;hi&#34;, &#34;hi&#34;, &#34;hii&#34;
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="shortest-match-lazy-match">Shortest match: Lazy match</h2>
+<p>Regular expression is by default &ldquo;greedy&rdquo;, meaning it will find the longest possible part of a string that fits the regex pattern and return it as a match.</p>
+<p>Lazy match <code>?</code> returns ALL the shortest possible match, not ONLY the shortest.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ship</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;titanic&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">smallerShip</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tanic&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">twoShip</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;titanic titanic&#34;</span>;
+
+<span style="color:#a6e22e">ship</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*i/</span>); <span style="color:#75715e">//&#34;titani&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ship</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*?i/</span>); <span style="color:#75715e">//&#34;ti&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">smallerShip</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*i/</span>); <span style="color:#75715e">//&#34;tani&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">smallerShip</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*?i/</span>); <span style="color:#75715e">//&#34;tani&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">twoShip</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*i/</span>); <span style="color:#75715e">//&#34;titani&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">twoShip</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*?i/</span>); <span style="color:#75715e">//&#34;ti&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">twoShip</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*i/g</span>); <span style="color:#75715e">//&#34;titani&#34;, &#34;titani&#34;
+</span><span style="color:#75715e">//shortest string that starts with a t and ends with a i
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">twoShip</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/t[a-z]*?i/g</span>); <span style="color:#75715e">//&#34;ti&#34;, &#34;tani&#34;, &#34;ti&#34;, &#34;tani&#34;
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="character-class-shortcut-whitespace-letters-numbers">Character class shortcut: Whitespace, Letters, Numbers</h2>
+<ol>
+<li>Match whitespace <code>\s</code></li>
+<li>Match non-whitespace <code>\S</code></li>
+<li>Match all letters and numbers <code>\w</code>: matches [A-Za-z0-9_]</li>
+<li>Match everything but letters and numbers <code>\W</code></li>
+<li>Match all numbers <code>\d</code></li>
+<li>Match all non-numbers <code>\D</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//whitespace
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\s/</span>); <span style="color:#75715e">//&#34; &#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\S/</span>); <span style="color:#75715e">//&#34;Y&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// letters and numbers
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\w/</span>); <span style="color:#75715e">//&#34;Y&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\W/</span>); <span style="color:#75715e">//&#34; &#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//numbers
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\d/</span>); <span style="color:#75715e">//&#34; &#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\D/</span>); <span style="color:#75715e">//&#34;Y&#34;
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="match-quantity-quantity-specifiers">Match quantity: Quantity specifiers</h2>
+<ol>
+<li>Between x to y times <code>{x,y}</code></li>
+<li>At least x time(s) <code>{x,}</code></li>
+<li>Exactly x time(s) <code>{x}</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">whatsUpMan</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Baaaaam&#34;</span>;
+
+<span style="color:#a6e22e">whatsUpMan</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a{2,4}/</span>); <span style="color:#75715e">//&#34;aaaa&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">whatsUpMan</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a{2,}/</span>); <span style="color:#75715e">//&#34;aaaaa&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">whatsUpMan</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a{,6}/</span>); <span style="color:#75715e">//null----will not work
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">whatsUpMan</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a{3}/</span>); <span style="color:#75715e">//&#34;aaa&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">whatsUpMan</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/a{6}/</span>); <span style="color:#75715e">//null----if exceed
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="multiple-patterns-positive-and-negative-lookahead">Multiple patterns: Positive and Negative Lookahead</h2>
+<ol>
+<li>positive lookahead <code>?=</code>: make sure pattern is there.</li>
+<li>negative lookahead <code>?!</code>: make sure pattern is not there.</li>
+</ol>
+<p>Pattern inside lookahead will not be return with the result.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/M(?=i)/</span>); <span style="color:#75715e">//&#34;M&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/M(?=o)/</span>); <span style="color:#75715e">//null
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/M(?!i)/</span>); <span style="color:#75715e">//null
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/M(?!o)/</span>); <span style="color:#75715e">//&#34;M&#34;
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h3 id="reuse-patterns-capture-group">Reuse patterns: Capture group</h3>
+<p>Capture group <code>()</code> and <code>\</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;42 42 42&#34;</span>;
+
+<span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\d+/</span>); <span style="color:#75715e">//&#34;42&#34;----get us number
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\d+\s/</span>); <span style="color:#75715e">//&#34;42 &#34;----get us number with a space
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/(\d+)\s\1/</span>); <span style="color:#75715e">//&#34;42 42&#34;,&#34;42&#34;----number space group1(number), group1(number)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\d+(\s)\1/</span>); <span style="color:#75715e">//null----there is no two space
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\d+(\s)\d+\1/</span>); <span style="color:#75715e">//&#34;42 42 &#34;,&#34; &#34;---- number space number group1(space), group1(space)
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/(\d+)(\s)\1\2/</span>); <span style="color:#75715e">//&#34;42 42 &#34;,&#34;42&#34;, &#34; &#34;
+</span><span style="color:#75715e">//so far seems like it will return the pattern, and the groups.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myAnswer</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^(\d+)(\s)\1\2\1$/</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fccAnswer</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^(\d+)\s\1\s\1$/</span>;
+
+<span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#a6e22e">fccAnswer</span>); <span style="color:#75715e">//&#34;42 42 42&#34;,&#34;42&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">match</span>(<span style="color:#a6e22e">myAnswer</span>); <span style="color:#75715e">//&#34;42 42 42&#34;,&#34;42&#34;, &#34; &#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Theoretically, to check if there are only three numbers with space between, both should work
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fccAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">number</span>); <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">number</span>); <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fccAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;42&#34;</span>); <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;42&#34;</span>); <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fccAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;42 42 42&#34;</span>); <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;42 42 42&#34;</span>); <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fccAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;42 42 42 &#34;</span>); <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myAnswer</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;42 42 42 &#34;</span>); <span style="color:#75715e">//false
+</span></code></pre></div><p><a href="#cover-topics">back to top</a></p>
+<h2 id="practice">Practice</h2>
+<p>Warm up:</p>
+<ol>
+<li>Get everything except &ldquo;ng&rdquo; from <code>me</code>.</li>
+<li>Switch &ldquo;Yong&rdquo; and &ldquo;Ming&rdquo; position.</li>
+<li>Remove whitespace at the start and the end of string &quot; Yong Ming &ldquo;.</li>
+</ol>
+<h3 id="sign-up-password">Sign up password</h3>
+<ul>
+<li>Requirements:
+<ul>
+<li>Password has to be at least two characters long.</li>
+<li>Two character long password can only use alphabet.</li>
+<li>Password can be uppercase or lowercase.</li>
+<li>Number have to be at the end of the password.</li>
+<li>There can be zero or more numbers.</li>
+</ul>
+</li>
+</ul>
+<h3 id="log-in-password">Log in password</h3>
+<p>Password is greater than 5 character long and have two consecutive digits</p>
+<h3 id="answers">Answers</h3>
+<ul>
+<li>
+<p>Warm up</p>
+<ul>
+<li>no &ldquo;ng&rdquo;: <code>me.match(/[^ng]/ig);</code>(Returns &ldquo;Y&rdquo;, &ldquo;o&rdquo;, &ldquo;M&rdquo;, &ldquo;i&rdquo;).</li>
+<li>reverse name: <code>me.replace(/(\w+)\s(\w+)/, '$2 $1');</code>.</li>
+<li>remove whitespace: <code>&quot; Yong Ming &quot;.replace(/^\s+|\s+$/g,&quot;&quot;)</code>.</li>
+</ul>
+</li>
+<li>
+<p>Sign up password: <code>/\D{2,}\d*$/i</code></p>
+<ul>
+<li>Password has to be at least two characters long.(<code>{2,}</code>)</li>
+<li>Two character long password can only use alphabet.(<code>\D</code>)</li>
+<li>Password can be uppercase or lowercase.(<code>i</code>)</li>
+<li>Number have to be at the end of the password.(<code>\d$</code>)</li>
+<li>There can be zero or more numbers.(*)</li>
+</ul>
+</li>
+<li>
+<p>Log in password: <code>/(?=\w{5,})(?=\D*\d{2})</code></p>
+</li>
+</ul>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
