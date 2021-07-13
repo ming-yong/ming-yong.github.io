@@ -3,11 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mingyong.dev/</loc>
-    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>https://mingyong.dev/blog/</loc>
-    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/blog/how-to-college/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/tags/softskills/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/tags/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/blog/beyond-tutorials/</loc>
+    <lastmod>2021-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/projects/matalogue/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
@@ -24,13 +36,16 @@
     <loc>https://mingyong.dev/tags/react/</loc>
     <lastmod>2021-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/tags/</loc>
-    <lastmod>2021-06-04T00:00:00+00:00</lastmod>
+    <loc>https://mingyong.dev/journey/chapter3/</loc>
+    <lastmod>2021-04-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mingyong.dev/journey/</loc>
+    <lastmod>2021-04-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/tags/hosting/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</loc>
+    <loc>https://mingyong.dev/blog/custom-domain-and-subdomains/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/blog/a-visit-to-the-tutorial-hell/</loc>
@@ -45,17 +60,17 @@
     <loc>https://mingyong.dev/blog/what-is-rebase/</loc>
     <lastmod>2020-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</loc>
+    <loc>https://mingyong.dev/blog/helpful-shortcut-keys/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/tags/productivity/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/journey/chapter1/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <loc>https://mingyong.dev/journey/chapter2/</loc>
+    <lastmod>2020-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mingyong.dev/journey/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <loc>https://mingyong.dev/journey/chapter1/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mingyong.dev/note-chp1/5-bugs-in-2019/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>

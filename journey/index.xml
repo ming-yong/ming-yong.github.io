@@ -7,14 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/journey/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/journey/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>From zero to a blog</title>
+      <title>As an Intern: Why should we keep you?</title>
+      <link>https://mingyong.dev/journey/chapter3/</link>
+      <pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/journey/chapter3/</guid>
+      <description>I believe you are not &amp;ldquo;less valuable&amp;rdquo; just because you don&amp;rsquo;t have much experience in the field (yet). Everybody provides different values to the team.
+The one thing you can always do is save people&amp;rsquo;s time. During my internship, I follow these two principles:
+ Do not waste people&amp;rsquo;s time Deliver work that&amp;rsquo;s valuable even after I left the company  I received a returning offer after my internship, so I guess they worked?</description>
+    </item>
+    
+    <item>
+      <title>As a Student: Good GPA, but what else?</title>
+      <link>https://mingyong.dev/journey/chapter2/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/journey/chapter2/</guid>
+      <description>I went to St.Lawrence College for the Computer Programmer Analyst advanced diploma program in 2018. As an international student, surviving winter in Canada and surviving school became my goals in my first year.
+School is going well after I figured out how the system works. Now I can focus on preparing for the upcoming work placement program.
+It didn&amp;rsquo;t take me long to realized that GPA is not the key selling point in community college.</description>
+    </item>
+    
+    <item>
+      <title>As a Code Newbie: What makes a good developer?</title>
       <link>https://mingyong.dev/journey/chapter1/</link>
-      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://mingyong.dev/journey/chapter1/</guid>
-      <description>Content  Summary Appendix A: Projects I built Appendix B: Notes I took Appendix C: For memories  Summary    Timeline What I did     Before Zero coding experience and barely use English in my daily life.   2018 Started learning HTML and CSS on freeCodeCamp and completed the Responsive Web Design course.    Took JavaScript30, a free course by WesBos, after completing JavaScript Algorithms and Data Structures on freeCodeCamp.</description>
+      <description>Content  The plan The process Appendix A: Projects I built Appendix B: Notes I took Appendix C: For memories  The plan As a code newbie, the questions I have are :
+ What hard skills do I need besides what&amp;rsquo;s taught in school? What soft skills do a developer need? How can I build them?  The answer to question 1 is pretty simple: take a look at the program outline and learn what&amp;rsquo;s not on there.</description>
     </item>
     
   </channel>

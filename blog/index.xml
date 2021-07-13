@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to excel in community college</title>
+      <link>https://mingyong.dev/blog/how-to-college/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/how-to-college/</guid>
+      <description>Ha! I am still writing it🙇‍♀️</description>
+    </item>
+    
+    <item>
+      <title>How to go beyond tutorials when you are a code newbie</title>
+      <link>https://mingyong.dev/blog/beyond-tutorials/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/beyond-tutorials/</guid>
+      <description>Ha! I am still writing it🙇‍♀️</description>
+    </item>
+    
     <item>
       <title>How to read a GraphQL API documentation</title>
       <link>https://mingyong.dev/blog/forming-a-graphql-query/</link>
@@ -21,10 +39,10 @@ When you first open the documentation (Click &amp;ldquo;DOCS&amp;rdquo; on your 
     
     <item>
       <title>How to set up Namecheap domain and subdomain on GitHub Pages</title>
-      <link>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</link>
+      <link>https://mingyong.dev/blog/custom-domain-and-subdomains/</link>
       <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://mingyong.dev/blog/how-to-set-up-nameheap-domain-and-subdomain-on-github-pages/</guid>
+      <guid>https://mingyong.dev/blog/custom-domain-and-subdomains/</guid>
       <description>Setting up a custom domain According to the &amp;ldquo;configuring an apex domain&amp;rdquo; GitHub document and &amp;ldquo;Connect GitHub Pages to Your Namecheap Domain&amp;rdquo; by Paul J. Williams, there are two steps to use your custom domain for &amp;lt;username&amp;gt;.github.io:
  add 4 A records and a CNAME record on Namecheap (&amp;ldquo;Domain List&amp;rdquo; &amp;gt; &amp;ldquo;Advanced DNS&amp;rdquo; &amp;gt; Add those records under &amp;ldquo;Host Records&amp;rdquo;) add a CNAME file to your GitHub repository (you can add a file or do it through &amp;ldquo;Settings&amp;rdquo; &amp;gt; &amp;ldquo;Options&amp;rdquo; &amp;gt; Add a &amp;ldquo;Custom domain&amp;rdquo; under &amp;ldquo;GitHub Pages&amp;rdquo;)  You don&amp;rsquo;t have to purchase the SSL certificate from Namecheap or manually install one.</description>
     </item>
@@ -54,10 +72,10 @@ We want to maintain a linear commit history and avoid as many merge conflicts as
     
     <item>
       <title>5 shortcut keys that help you code faster🏃‍♀️💨</title>
-      <link>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</link>
+      <link>https://mingyong.dev/blog/helpful-shortcut-keys/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://mingyong.dev/blog/5-shortcut-keys-that-help-you-code-faster/</guid>
+      <guid>https://mingyong.dev/blog/helpful-shortcut-keys/</guid>
       <description>What I think I look like when I am using them:
 Please note that I am using a Windows keyboard. Other than that, the following shortcuts are not specific to any IDE or editor.
 🏃‍♀️💨 Move the cursor one word at a time  Ctrl + arrow keys to move your cursor one word at a time. Hold down the Shift key to highlight.  Useful for:

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Ming Yong.</copyright>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>softSkills</title>
+      <link>https://mingyong.dev/tags/softskills/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/tags/softskills/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GraphQL</title>
       <link>https://mingyong.dev/tags/graphql/</link>

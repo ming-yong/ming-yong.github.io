@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>softSkills on (ง •̀_•́)ง Ming and Her Code</title>
+    <link>https://mingyong.dev/tags/softskills/</link>
+    <description>Recent content in softSkills on (ง •̀_•́)ง Ming and Her Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Ming Yong.</copyright>
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mingyong.dev/tags/softskills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to excel in community college</title>
+      <link>https://mingyong.dev/blog/how-to-college/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/how-to-college/</guid>
+      <description>Ha! I am still writing it🙇‍♀️</description>
+    </item>
+    
+    <item>
+      <title>How to go beyond tutorials when you are a code newbie</title>
+      <link>https://mingyong.dev/blog/beyond-tutorials/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mingyong.dev/blog/beyond-tutorials/</guid>
+      <description>Ha! I am still writing it🙇‍♀️</description>
+    </item>
+    
+  </channel>
+</rss>

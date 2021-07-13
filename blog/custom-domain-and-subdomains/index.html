@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to set up Namecheap domain and subdomain on GitHub Pages | (ง •̀_•́)ง Ming and Her Code</title>
+<meta name="title" content="How to set up Namecheap domain and subdomain on GitHub Pages" />
+<meta name="description" content="How to set up Namecheap domain and subdomain on GitHub Pages" />
+<meta name="keywords" content="hosting," />
+
+
+<meta property="og:title" content="How to set up Namecheap domain and subdomain on GitHub Pages" />
+<meta property="og:description" content="How to set up Namecheap domain and subdomain on GitHub Pages" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mingyong.dev/blog/custom-domain-and-subdomains/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-01-11T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-01-11T00:00:00&#43;00:00" /><meta property="og:site_name" content="Ming&#39;s blog" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to set up Namecheap domain and subdomain on GitHub Pages"/>
+<meta name="twitter:description" content="How to set up Namecheap domain and subdomain on GitHub Pages"/>
+
+
+
+<meta itemprop="name" content="How to set up Namecheap domain and subdomain on GitHub Pages">
+<meta itemprop="description" content="How to set up Namecheap domain and subdomain on GitHub Pages"><meta itemprop="datePublished" content="2021-01-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-01-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="254">
+<meta itemprop="keywords" content="hosting," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+     
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  div.highlight code {
+    background-color: unset;
+     
+    color:white;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+<style>
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.5em;
+	}
+
+	.journeyDescription{
+		margin:0;
+	}
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>(ง •̀_•́)ง Ming and Her Code</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/journey/">Journey</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+  
+  <h1>How to set up Namecheap domain and subdomain on GitHub Pages</h1>
+  <p>
+    <i>
+      <time datetime='2021-01-11' pubdate>
+        11 Jan, 2021
+      </time>
+    </i>
+  </p>
+  
+
+<content>
+  <h2 id="setting-up-a-custom-domain">Setting up a custom domain</h2>
+<p>According to the <a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">&ldquo;configuring an apex domain&rdquo; GitHub document</a> and <a href="https://dev.to/pauljwil/connect-github-pages-to-your-namecheap-domain-4gjj">&ldquo;Connect GitHub Pages to Your Namecheap Domain&rdquo;</a> by <a href="https://dev.to/pauljwil">Paul J. Williams</a>, there are two steps to use your custom domain for <code>&lt;username&gt;.github.io</code>:</p>
+<ol>
+<li>add 4 A records and a CNAME record on Namecheap (&ldquo;Domain List&rdquo; &gt; &ldquo;Advanced DNS&rdquo; &gt; Add those records under &ldquo;Host Records&rdquo;)</li>
+<li>add a CNAME file to your GitHub repository (you can add a file or do it through &ldquo;Settings&rdquo; &gt; &ldquo;Options&rdquo; &gt; Add a &ldquo;Custom domain&rdquo; under &ldquo;GitHub Pages&rdquo;)</li>
+</ol>
+<p>You don&rsquo;t have to purchase the SSL certificate from Namecheap or manually install one. Just check the &ldquo;Enforce HTTPS&rdquo; box under the &ldquo;Custom domain&rdquo; section on your repository.</p>
+<h3 id="minor-issues-i-faced">Minor issues I faced</h3>
+<p>I have to uninstall my higher version of Visual Studio through Control Panel and run the execution file as an admin when installing BIND. I also follow the article <a href="https://help.dyn.com/how-to-use-binds-dig-tool/">&ldquo;How to use BIND&rsquo;s Domain Information Groper (dig) Tool&rdquo;</a> to select &ldquo;Tools only&rdquo; and add &ldquo;C:\Program Files\ISC BIND 9\bin&rdquo; to the system&rsquo;s PATH afterwards.</p>
+<h2 id="setting-up-a-subdomain">Setting up a subdomain</h2>
+<p>In my case, I want to use my subdomain <code>blog.mingyong.dev</code> for another repository I have.</p>
+<p>The process is the same as setting up a domain. Simply add a CName record to your Namecheap &ldquo;Host Records&rdquo; list with information as below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Host</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:center">TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CNAME Record</td>
+<td style="text-align:center">blog</td>
+<td style="text-align:center"><code>&lt;username&gt;.github.io</code></td>
+<td style="text-align:center">Automatic</td>
+</tr>
+</tbody>
+</table>
+<p>and tell your repository you want to use <code>blog.mingyong.dev</code> as the custom domain.</p>
+<p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/#:~:text=You%20can%20add%20up%20to,should%20be%20pointed%2Fforwarded%20to.">Namecheap</a> allows 150 subdomains per domain. I guess that means I can have another 148 projects.</p>
+
+</content>
+<p>
+  
+  <a href="https://mingyong.dev/tags/hosting/">#hosting</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
